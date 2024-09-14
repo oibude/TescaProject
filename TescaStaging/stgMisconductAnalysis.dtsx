@@ -1,0 +1,2715 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/7/2024 10:04:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G6U1K7"
+  DTS:CreatorName="DESKTOP-9G6U1K7\HP SPECTRE"
+  DTS:DTSID="{8A3CB3E2-09DD-4F0B-94C0-7106C72C4B5A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{F99578A3-1AD1-484A-B52C-DA549CCB0EE9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MisconductAnalysis]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B75F9590-CF3B-4DCA-B9E2-0EC5A0E96958}"
+      DTS:ObjectName="MisconductAnalysis">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\PBN\Tesca Project\Tesca Grocery Store\HR data files\misconduct_trans.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="empid"
+              DTS:DTSID="{44164D32-A008-4DCA-80CE-A53B91A48974}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="storeid"
+              DTS:DTSID="{868E5B6E-AF96-4068-A0B4-39D3C8BA5EB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="misconduct_date"
+              DTS:DTSID="{A74FE123-96E0-479E-A1FF-CE7BD0A4EA83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="misconduct_id"
+              DTS:DTSID="{C72FABD0-029E-4B2C-A77F-CFA0B483A882}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="decision_id"
+              DTS:DTSID="{E11EA864-4A49-4157-9BAD-A52DDE1FBFAD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{43F936B0-2692-4213-BC54-F1A4D170B39F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="edwCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{97FD0B0F-1820-4263-943B-61442132DDFD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">14</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B0EADAAF-6947-492E-986B-F37D6832D4CC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="stgDescount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E899AA8-C6EA-445A-BB20-2A4F4A3267F9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="stgSourceCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Descount"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{16FD430A-24B4-4685-8AC7-0AC6A00F2C2E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Descount"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8C83C4C6-553D-4DA8-A846-C95C8089053D}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as DesCount FROM staging.MisconductAnalysis"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DesCount"
+            SQLTask:DtsVariableName="User::stgDescount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\edwCount"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{505BE95C-84DB-401A-9AE2-A83652A1833C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="edwCount"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7847ABF-109A-421B-87A5-0C6D5934EA55}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as edwCount FROM EDW.Fact_MisconductAnalysis "
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="edwCount"
+            SQLTask:DtsVariableName="User::edwCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load MisconductAnalysis"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{75868bbf-d10c-437b-b699-15e48f461ee8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load MisconductAnalysis"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load MisconductAnalysis\Begin to N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\Begin to N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Begin to N-1.Inputs[Conditional Split Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\Load MisconductAnalysis\Begin to N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]} &lt;= (DT_DBDATE)[DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)misconduct_date &lt;= (DT_DBDATE)DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\Begin to N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\Begin to N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\Begin to N-1, N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1, N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[N-1]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\Exclude Future Date"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Exclude Future Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\Exclude Future Date.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Exclude Future Date.Inputs[Conditional Split Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Load MisconductAnalysis\Exclude Future Date.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]} &lt; (DT_DBDATE)[GETDATE]()</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)misconduct_date &lt; (DT_DBDATE)GETDATE()</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[Future Date]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Future Date"
+                  synchronousInputId="Package\Load MisconductAnalysis\Exclude Future Date.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\Exclude Future Date.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MisconductAnalysis\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MisconductAnalysis]"
+                  connectionManagerRefId="Package.ConnectionManagers[MisconductAnalysis]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[empid]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[empid]"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[empid]"
+                      name="empid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[storeid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[storeid]"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[storeid]"
+                      name="storeid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_date]"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]"
+                      name="misconduct_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_id]"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_id]"
+                      name="misconduct_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[decision_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[decision_id]"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[decision_id]"
+                      name="decision_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[empid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="empid" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[storeid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="storeid" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="misconduct_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="misconduct_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[decision_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="decision_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\Load Misconduct"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Misconduct"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[MisconductAnalysis]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load MisconductAnalysis\Load Misconduct.Connections[OleDbConnection]"
+                  connectionManagerID="{8C83C4C6-553D-4DA8-A846-C95C8089053D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].Columns[empid]"
+                      cachedDataType="i8"
+                      cachedName="empid"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[EmpID]"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[empid]" />
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].Columns[storeid]"
+                      cachedDataType="i4"
+                      cachedName="storeid"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[StoreID]"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[storeid]" />
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].Columns[misconduct_id]"
+                      cachedDataType="i4"
+                      cachedName="misconduct_id"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[MisconductID]"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_id]" />
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].Columns[decision_id]"
+                      cachedDataType="i4"
+                      cachedName="decision_id"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[DecisionID]"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[decision_id]" />
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      externalMetadataColumnId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[MisconductDate]"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[Misconductsk]"
+                      dataType="i8"
+                      name="Misconductsk" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[EmpID]"
+                      dataType="i4"
+                      name="EmpID" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[StoreID]"
+                      dataType="i4"
+                      name="StoreID" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[MisconductID]"
+                      dataType="i4"
+                      name="MisconductID" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[DecisionID]"
+                      dataType="i4"
+                      name="DecisionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[MisconductDate]"
+                      dataType="dbDate"
+                      name="MisconductDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\Load Misconduct.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Load Misconduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Load Misconduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Load Misconduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\LoadDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="LoadDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\LoadDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\LoadDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Output].Columns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Output].Columns[LoadDate]"
+                      name="LoadDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\LoadDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\N-1.Inputs[Conditional Split Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\N-1.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Load MisconductAnalysis\N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]} == [DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)misconduct_date == DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load MisconductAnalysis\N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load MisconductAnalysis\N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load MisconductAnalysis\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1].Columns[empid]"
+                      cachedDataType="i8"
+                      cachedName="empid"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[empid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[empid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1].Columns[storeid]"
+                      cachedDataType="i4"
+                      cachedName="storeid"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[storeid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[storeid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1].Columns[misconduct_id]"
+                      cachedDataType="i4"
+                      cachedName="misconduct_id"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1].Columns[decision_id]"
+                      cachedDataType="i4"
+                      cachedName="decision_id"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[decision_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[decision_id]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2].Columns[empid]"
+                      cachedDataType="i8"
+                      cachedName="empid"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[empid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[empid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2].Columns[storeid]"
+                      cachedDataType="i4"
+                      cachedName="storeid"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[storeid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[storeid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2].Columns[misconduct_id]"
+                      cachedDataType="i4"
+                      cachedName="misconduct_id"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2].Columns[decision_id]"
+                      cachedDataType="i4"
+                      cachedName="decision_id"
+                      lineageId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output].Columns[decision_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[decision_id]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[empid]"
+                      dataType="i8"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[empid]"
+                      name="empid" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[storeid]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[storeid]"
+                      name="storeid" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_date]"
+                      name="misconduct_date" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_id]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[misconduct_id]"
+                      name="misconduct_id" />
+                    <outputColumn
+                      refId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[decision_id]"
+                      dataType="i4"
+                      lineageId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1].Columns[decision_id]"
+                      name="decision_id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[Begin to N-1]"
+              endId="Package\Load MisconductAnalysis\Begin to N-1.Inputs[Conditional Split Input]"
+              name="Begin to N-1"
+              startId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[Begin to N-11]"
+              endId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 1]"
+              name="Begin to N-1"
+              startId="Package\Load MisconductAnalysis\Begin to N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[Derived Column Output]"
+              endId="Package\Load MisconductAnalysis\Load Misconduct.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load MisconductAnalysis\LoadDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[Flat File Source Output]"
+              endId="Package\Load MisconductAnalysis\Exclude Future Date.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Load MisconductAnalysis\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[N-1]"
+              endId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\Load MisconductAnalysis\Exclude Future Date.Outputs[N-1]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[N-11]"
+              endId="Package\Load MisconductAnalysis\N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\Load MisconductAnalysis\Begin to N-1, N-1.Outputs[N-1]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[N-12]"
+              endId="Package\Load MisconductAnalysis\Union All.Inputs[Union All Input 2]"
+              name="N-1"
+              startId="Package\Load MisconductAnalysis\N-1.Outputs[N-1]" />
+            <path
+              refId="Package\Load MisconductAnalysis.Paths[Union All Output 1]"
+              endId="Package\Load MisconductAnalysis\LoadDate.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Load MisconductAnalysis\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Source Count"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{25563BF3-01EC-4D39-9BFC-728DFA6425DE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Source Count"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Source Count\Begin to N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Source Count\Begin to N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Source Count\Begin to N-1.Inputs[Conditional Split Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Count\Begin to N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\Source Count\Begin to N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]} &lt;= (DT_DBDATE)[DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)misconduct_date &lt;= (DT_DBDATE)DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\Begin to N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Source Count\Begin to N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\Begin to N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Source Count\Begin to N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Count\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Count\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Count\Begin to N-1, N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1, N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Source Count\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Count\Begin to N-1, N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\Source Count\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\Begin to N-1, N-1.Outputs[N-1]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Source Count\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\Begin to N-1, N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Source Count\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Count\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Count\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Count\Exclude Future Date"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Exclude Future Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Source Count\Exclude Future Date.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Source Count\Exclude Future Date.Inputs[Conditional Split Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Count\Exclude Future Date.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Source Count\Exclude Future Date.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]} &lt; (DT_DBDATE)[GETDATE]()</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)misconduct_date &lt; (DT_DBDATE)GETDATE()</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\Exclude Future Date.Outputs[Future Date]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Future Date"
+                  synchronousInputId="Package\Source Count\Exclude Future Date.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\Exclude Future Date.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Source Count\Exclude Future Date.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Count\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Count\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Exclude Future Date.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Count\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Source Count\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MisconductAnalysis]"
+                  connectionManagerRefId="Package.ConnectionManagers[MisconductAnalysis]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[empid]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[empid]"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[empid]"
+                      name="empid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[storeid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[storeid]"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[storeid]"
+                      name="storeid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_date]"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]"
+                      name="misconduct_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_id]"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_id]"
+                      name="misconduct_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[decision_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[decision_id]"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[decision_id]"
+                      name="decision_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[empid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="empid" />
+                    <externalMetadataColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[storeid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="storeid" />
+                    <externalMetadataColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="misconduct_date" />
+                    <externalMetadataColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[misconduct_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="misconduct_id" />
+                    <externalMetadataColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[decision_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="decision_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Count\N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Source Count\N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Source Count\N-1.Inputs[Conditional Split Input].Columns[misconduct_date]"
+                      cachedDataType="dbDate"
+                      cachedName="misconduct_date"
+                      lineageId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Count\N-1.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Source Count\N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Source Count\Flat File Source.Outputs[Flat File Source Output].Columns[misconduct_date]} == [DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)misconduct_date == DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Source Count\N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source Count\N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Source Count\N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source Count\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source Count\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source Count\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Count\SourceCount1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="SourceCount1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::stgSourceCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Source Count\SourceCount1.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Count\SourceCount1.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Source Count\SourceCount1.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source Count\StageCount"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="StageCount">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::stgSourceCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Source Count\StageCount.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source Count\StageCount.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Source Count\StageCount.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Source Count.Paths[Begin to N-1]"
+              endId="Package\Source Count\Begin to N-1.Inputs[Conditional Split Input]"
+              name="Begin to N-1"
+              startId="Package\Source Count\Begin to N-1, N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\Source Count.Paths[Begin to N-11]"
+              endId="Package\Source Count\StageCount.Inputs[Row Count Input 1]"
+              name="Begin to N-1"
+              startId="Package\Source Count\Begin to N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\Source Count.Paths[Flat File Source Output]"
+              endId="Package\Source Count\Exclude Future Date.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Source Count\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Source Count.Paths[N-1]"
+              endId="Package\Source Count\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\Source Count\Exclude Future Date.Outputs[N-1]" />
+            <path
+              refId="Package\Source Count.Paths[N-11]"
+              endId="Package\Source Count\N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\Source Count\Begin to N-1, N-1.Outputs[N-1]" />
+            <path
+              refId="Package\Source Count.Paths[N-12]"
+              endId="Package\Source Count\SourceCount1.Inputs[Row Count Input 1]"
+              name="N-1"
+              startId="Package\Source Count\N-1.Outputs[N-1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging MisconductAnalysis"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B4F324F0-1AA5-40BA-A52F-7E9E50D64F82}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging MisconductAnalysis"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8C83C4C6-553D-4DA8-A846-C95C8089053D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.MisconductAnalysis" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Metrics"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{66795ef3-4770-4867-80d0-59b636f128af}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Metrics"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A0CCCB70-1B27-42E7-8B90-53312AAF7390}"
+          SQLTask:SqlStatementSource="DECLARE @PackageID INT =? &#xA;DECLARE @StgSourceCount INT=?&#xA;DECLARE @stgDesCount INT=?&#xA;&#xA;&#xA;INSERT INTO control.metrics(PackageID, StgSourceCount, StgDesCount, RunDate)&#xA;VALUES (@PackageID,@StgSourceCount, @StgSourceCount, GETDATE())&#xA;&#xA;UPDATE control.Package SET LastDateRun=GETDATE() WHERE PackageID=@PackageID&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::stgSourceCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::stgDescount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F579F42-D736-4C46-A166-4275350EB8C1}"
+      DTS:From="Package\Truncate Staging MisconductAnalysis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\edwCount" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EC24C219-475F-459E-B688-549492EA6D9F}"
+      DTS:From="Package\edwCount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Source Count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{254B9EAE-F778-4A1F-B316-2CF87B5CE916}"
+      DTS:From="Package\Source Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load MisconductAnalysis" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D0066C88-8379-4E61-A16A-D6D6026CB918}"
+      DTS:From="Package\Load MisconductAnalysis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Descount" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{104B43E7-D057-42F4-AEE5-6EE75FAA0DD0}"
+      DTS:From="Package\Descount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update Metrics" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\Truncate Staging MisconductAnalysis"
+          TopLeft="381.538475533209,44.9090925313882" />
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\edwCount"
+          TopLeft="422.307707797847,117.787883042852" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="507.538475533209,86.5090925313882">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.4307677353625,31.2787905114633"
+              Start="0,0"
+              End="-22.4307677353625,23.7787905114633">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6393952557316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6393952557316"
+                    Point2="0,15.6393952557316"
+                    Point3="-4,15.6393952557316" />
+                  <mssgle:LineSegment
+                    End="-18.4307677353625,15.6393952557316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.4307677353625,15.6393952557316"
+                    Point2="-22.4307677353625,15.6393952557316"
+                    Point3="-22.4307677353625,19.6393952557317" />
+                  <mssgle:LineSegment
+                    End="-22.4307677353625,23.7787905114633" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Source Count"
+          TopLeft="415.384630620833,191.848491778825" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="485.64616920934,159.387883042852">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.4606087359735"
+              Start="0,0"
+              End="0,24.9606087359735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9606087359735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Load MisconductAnalysis"
+          TopLeft="390.384629703838,278.121222168071" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="486.884630162336,233.448491778825">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.6727303892458"
+              Start="0,0"
+              End="0,37.1727303892458">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1727303892458" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Descount"
+          TopLeft="416.538476817002,347.848497414174" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="487.584629703838,319.721222168071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.84615288683642,28.1272752461027"
+              Start="0,0"
+              End="-9.84615288683642,20.6272752461027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0636376230514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0636376230514"
+                    Point2="0,14.0636376230514"
+                    Point3="-4,14.0636376230514" />
+                  <mssgle:LineSegment
+                    End="-5.84615288683642,14.0636376230514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.84615288683642,14.0636376230514"
+                    Point2="-9.84615288683642,14.0636376230514"
+                    Point3="-9.84615288683642,18.0636376230514" />
+                  <mssgle:LineSegment
+                    End="-9.84615288683642,20.6272752461027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Update Metrics"
+          TopLeft="414.615399823387,435.812136680868" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="477.738476817002,389.448497414174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.2769230063851,46.3636392666948"
+              Start="0,0"
+              End="11.2769230063851,38.8636392666948">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1818196333474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1818196333474"
+                    Point2="0,23.1818196333474"
+                    Point3="4,23.1818196333474" />
+                  <mssgle:LineSegment
+                    End="7.27692300638506,23.1818196333474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.27692300638506,23.1818196333474"
+                    Point2="11.2769230063851,23.1818196333474"
+                    Point3="11.2769230063851,27.1818196333474" />
+                  <mssgle:LineSegment
+                    End="11.2769230063851,38.8636392666948" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Source Count">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Source Count\Flat File Source"
+          TopLeft="365.384628786844,9.4545457960817" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Source Count\Exclude Future Date"
+          TopLeft="361.923090198337,83.9090939402253" />
+        <EdgeLayout
+          Id="Package\Source Count.Paths[Flat File Source Output]"
+          TopLeft="440.584628786844,51.0545457960817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.1384614114931,32.8545481441436"
+              Start="0,0"
+              End="8.1384614114931,25.3545481441436">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4272740720718" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4272740720718"
+                    Point2="0,16.4272740720718"
+                    Point3="4,16.4272740720718" />
+                  <mssgle:LineSegment
+                    End="4.1384614114931,16.4272740720718" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.1384614114931,16.4272740720718"
+                    Point2="8.1384614114931,16.4272740720718"
+                    Point3="8.1384614114931,20.4272740720718" />
+                  <mssgle:LineSegment
+                    End="8.1384614114931,25.3545481441436" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Source Count\Begin to N-1, N-1"
+          TopLeft="222.692315860613,176.878794268362" />
+        <EdgeLayout
+          Id="Package\Source Count.Paths[N-1]"
+          TopLeft="448.723090198337,125.509093940225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-145.630774337724,51.3697003281369"
+              Start="0,0"
+              End="-145.630774337724,43.8697003281369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6848501640685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6848501640685"
+                    Point2="0,25.6848501640685"
+                    Point3="-4,25.6848501640685" />
+                  <mssgle:LineSegment
+                    End="-141.630774337724,25.6848501640685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-141.630774337724,25.6848501640685"
+                    Point2="-145.630774337724,25.6848501640685"
+                    Point3="-145.630774337724,29.6848501640685" />
+                  <mssgle:LineSegment
+                    End="-145.630774337724,43.8697003281369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80.9209535751118,30.6848501640685,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Source Count\Begin to N-1"
+          TopLeft="151.923082495582,250.151524187996" />
+        <EdgeLayout
+          Id="Package\Source Count.Paths[Begin to N-1]"
+          TopLeft="303.092315860613,218.478794268362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.3692333650308,31.6727299196333"
+              Start="0,0"
+              End="-82.3692333650308,24.1727299196333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.8363649598166" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.8363649598166"
+                    Point2="0,15.8363649598166"
+                    Point3="-4,15.8363649598166" />
+                  <mssgle:LineSegment
+                    End="-78.3692333650308,15.8363649598166" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.3692333650308,15.8363649598166"
+                    Point2="-82.3692333650308,15.8363649598166"
+                    Point3="-82.3692333650308,19.8363649598166" />
+                  <mssgle:LineSegment
+                    End="-82.3692333650308,24.1727299196333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-69.0801830887654,20.8363649598166,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="95.2,41.6"
+          Id="Package\Source Count\N-1"
+          TopLeft="321.153857933699,249.363645371655" />
+        <EdgeLayout
+          Id="Package\Source Count.Paths[N-11]"
+          TopLeft="328.55898252728,218.478794268362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.1948754064196,30.8848511032932"
+              Start="0,0"
+              End="40.1948754064196,23.3848511032932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.53651098971111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.53651098971111"
+                    Point2="0,12.5365109897111"
+                    Point3="4,12.5365109897111" />
+                  <mssgle:LineSegment
+                    End="36.1948754064196,12.5365109897111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.1948754064196,12.5365109897111"
+                    Point2="40.1948754064196,12.5365109897111"
+                    Point3="40.1948754064196,16.5365109897111" />
+                  <mssgle:LineSegment
+                    End="40.1948754064196,23.3848511032932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.9918712969598,17.5365109897111,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Source Count\StageCount"
+          TopLeft="156.538467280258,339.575769842602" />
+        <EdgeLayout
+          Id="Package\Source Count.Paths[Begin to N-11]"
+          TopLeft="221.83077488792,291.751524187996">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8242456546063"
+              Start="0,0"
+              End="0,40.3242456546063">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3242456546063" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89556640625,14.4697400148032,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Source Count\SourceCount1"
+          TopLeft="363.076936394506,346.4969816792" />
+        <EdgeLayout
+          Id="Package\Source Count.Paths[N-12]"
+          TopLeft="368.753857933699,290.963645371655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.3230784608063,55.533336307545"
+              Start="0,0"
+              End="66.3230784608063,48.033336307545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7666681537725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7666681537725"
+                    Point2="0,27.7666681537725"
+                    Point3="4,27.7666681537725" />
+                  <mssgle:LineSegment
+                    End="62.3230784608063,27.7666681537725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.3230784608063,27.7666681537725"
+                    Point2="66.3230784608063,27.7666681537725"
+                    Point3="66.3230784608063,31.7666681537725" />
+                  <mssgle:LineSegment
+                    End="66.3230784608063,48.033336307545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.0559728241532,32.7666681537725,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Load MisconductAnalysis">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load MisconductAnalysis\Begin to N-1"
+          TopLeft="151.923082495582,250.151524187996" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Load MisconductAnalysis\Exclude Future Date"
+          TopLeft="361.923090198337,83.9090939402253" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Load MisconductAnalysis\Begin to N-1, N-1"
+          TopLeft="222.692315860613,176.878794268362" />
+        <NodeLayout
+          Size="95.2,41.6"
+          Id="Package\Load MisconductAnalysis\N-1"
+          TopLeft="321.153857933699,249.363645371655" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Load MisconductAnalysis\Flat File Source"
+          TopLeft="365.384628786844,9.4545457960817" />
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[Flat File Source Output]"
+          TopLeft="440.584628786844,51.0545457960817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.1384614114931,32.8545481441436"
+              Start="0,0"
+              End="8.1384614114931,25.3545481441436">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4272740720718" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4272740720718"
+                    Point2="0,16.4272740720718"
+                    Point3="4,16.4272740720718" />
+                  <mssgle:LineSegment
+                    End="4.1384614114931,16.4272740720718" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.1384614114931,16.4272740720718"
+                    Point2="8.1384614114931,16.4272740720718"
+                    Point3="8.1384614114931,20.4272740720718" />
+                  <mssgle:LineSegment
+                    End="8.1384614114931,25.3545481441436" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[N-11]"
+          TopLeft="328.55898252728,218.478794268362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.1948754064196,30.8848511032932"
+              Start="0,0"
+              End="40.1948754064196,23.3848511032932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.53651098971111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.53651098971111"
+                    Point2="0,12.5365109897111"
+                    Point3="4,12.5365109897111" />
+                  <mssgle:LineSegment
+                    End="36.1948754064196,12.5365109897111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.1948754064196,12.5365109897111"
+                    Point2="40.1948754064196,12.5365109897111"
+                    Point3="40.1948754064196,16.5365109897111" />
+                  <mssgle:LineSegment
+                    End="40.1948754064196,23.3848511032932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.9918712969598,17.5365109897111,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[Begin to N-1]"
+          TopLeft="303.092315860613,218.478794268362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.3692333650308,31.6727299196333"
+              Start="0,0"
+              End="-82.3692333650308,24.1727299196333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.8363649598166" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.8363649598166"
+                    Point2="0,15.8363649598166"
+                    Point3="-4,15.8363649598166" />
+                  <mssgle:LineSegment
+                    End="-78.3692333650308,15.8363649598166" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.3692333650308,15.8363649598166"
+                    Point2="-82.3692333650308,15.8363649598166"
+                    Point3="-82.3692333650308,19.8363649598166" />
+                  <mssgle:LineSegment
+                    End="-82.3692333650308,24.1727299196333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-69.0801830887654,20.8363649598166,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[N-1]"
+          TopLeft="448.723090198337,125.509093940225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-145.630774337724,51.3697003281369"
+              Start="0,0"
+              End="-145.630774337724,43.8697003281369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6848501640685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6848501640685"
+                    Point2="0,25.6848501640685"
+                    Point3="-4,25.6848501640685" />
+                  <mssgle:LineSegment
+                    End="-141.630774337724,25.6848501640685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-141.630774337724,25.6848501640685"
+                    Point2="-145.630774337724,25.6848501640685"
+                    Point3="-145.630774337724,29.6848501640685" />
+                  <mssgle:LineSegment
+                    End="-145.630774337724,43.8697003281369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80.920953575112,30.6848501640685,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Load MisconductAnalysis\Union All"
+          TopLeft="228,341.8" />
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[Begin to N-11]"
+          TopLeft="220.723082495582,291.751524187996">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.2769175044181,50.048475812004"
+              Start="0,0"
+              End="67.2769175044181,42.548475812004">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.024237906002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.024237906002"
+                    Point2="0,25.024237906002"
+                    Point3="4,25.024237906002" />
+                  <mssgle:LineSegment
+                    End="63.2769175044181,25.024237906002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.2769175044181,25.024237906002"
+                    Point2="67.2769175044181,25.024237906002"
+                    Point3="67.2769175044181,29.024237906002" />
+                  <mssgle:LineSegment
+                    End="67.2769175044181,42.548475812004" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="5.74289234595903,30.024237906002,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[N-12]"
+          TopLeft="368.753857933699,290.963645371655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.0871912670323,50.836354628345"
+              Start="0,0"
+              End="-62.0871912670323,43.336354628345">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1004731352043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.1004731352043"
+                    Point2="0,30.1004731352043"
+                    Point3="-4,30.1004731352043" />
+                  <mssgle:LineSegment
+                    End="-58.0871912670323,30.1004731352043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.0871912670323,30.1004731352043"
+                    Point2="-62.0871912670323,30.1004731352043"
+                    Point3="-62.0871912670323,34.1004731352043" />
+                  <mssgle:LineSegment
+                    End="-62.0871912670323,43.336354628345" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.1491620397661,35.1004731352043,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Load MisconductAnalysis\LoadDate"
+          TopLeft="238,413.3" />
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[Union All Output 1]"
+          TopLeft="288,383.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.6,29.9"
+              Start="0,0"
+              End="11.6,22.4">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.95" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.95"
+                    Point2="0,14.95"
+                    Point3="4,14.95" />
+                  <mssgle:LineSegment
+                    End="7.59999999999997,14.95" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.59999999999997,14.95"
+                    Point2="11.6,14.95"
+                    Point3="11.6,18.95" />
+                  <mssgle:LineSegment
+                    End="11.6,22.4" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Load MisconductAnalysis\Load Misconduct"
+          TopLeft="240,491.8" />
+        <EdgeLayout
+          Id="Package\Load MisconductAnalysis.Paths[Derived Column Output]"
+          TopLeft="299.6,454.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8,36.8999999999999"
+              Start="0,0"
+              End="18.8,29.3999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.45"
+                    Point2="0,18.45"
+                    Point3="4,18.45" />
+                  <mssgle:LineSegment
+                    End="14.8,18.45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8,18.45"
+                    Point2="18.8,18.45"
+                    Point3="18.8,22.45" />
+                  <mssgle:LineSegment
+                    End="18.8,29.3999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load MisconductAnalysis\Load Misconduct">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1243 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/13/2024 12:05:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G6U1K7"
+  DTS:CreatorName="DESKTOP-9G6U1K7\HP SPECTRE"
+  DTS:DTSID="{41480605-529A-47A3-A7D6-CBBF98C956C8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{83BD9769-7480-42DD-BB3C-2C79C289E673}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7907E933-1208-4951-86D8-51E4FB69C930}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3E44CC8E-5565-4E7C-BFDA-AD9E0E473F18}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">25</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4621B420-5E3C-4B6A-9DDF-A4823A1233BD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PostCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4B967AFF-E469-4903-864A-391C429885BB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PreCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56911F07-5569-442E-831B-2ECF3242BEE1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Type1Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{553F34D8-0BE2-4998-A605-C6FE4111EC28}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Type2Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load dimAbsence"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{35787CC6-04B0-47E6-882C-229DC2623392}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load dimAbsence"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load dimAbsence\Current Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Current Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CurrentCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load dimAbsence\Current Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load dimAbsence\Current Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load dimAbsence\Current Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load dimAbsence\Extract dimAbsence from staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract dimAbsence from staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">WITH dimabsence_cte AS
+	(SELECT categoryid, category FROM staging.Absence
+	GROUP BY categoryid, category)
+SELECT categoryid, category, GETDATE() as EffectiveStartDate  FROM  dimabsence_cte</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load dimAbsence\Extract dimAbsence from staging.Connections[OleDbConnection]"
+                  connectionManagerID="{9F24E1A4-F608-46D2-9F5F-CD4033C68312}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[categoryid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].ExternalColumns[categoryid]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[categoryid]"
+                      name="categoryid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].ExternalColumns[category]"
+                      length="255"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].ExternalColumns[EffectiveStartDate]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[EffectiveStartDate]"
+                      name="EffectiveStartDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].ExternalColumns[categoryid]"
+                      dataType="i4"
+                      name="categoryid" />
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="255"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveStartDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[categoryid]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[categoryid]"
+                      name="categoryid" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[category]"
+                      name="category" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[EffectiveStartDate]"
+                      name="EffectiveStartDate" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load dimAbsence\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EDW].[DimAbsence]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load dimAbsence\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].Columns[categoryid]"
+                      cachedDataType="i4"
+                      cachedName="categoryid"
+                      externalMetadataColumnId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoryid]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[categoryid]" />
+                    <inputColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].Columns[category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[category]" />
+                    <inputColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].Columns[EffectiveStartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveStartDate"
+                      externalMetadataColumnId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveStartDate]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[EffectiveStartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[categorySK]"
+                      dataType="i4"
+                      name="categorySK" />
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoryid]"
+                      dataType="i4"
+                      name="categoryid" />
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="255"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveStartDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load dimAbsence\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load dimAbsence\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [EDW].[DimAbsence] SET [category] = ?, EffectiveStartDate=GETDATE() WHERE [categoryid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load dimAbsence\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input].Columns[category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[category]" />
+                    <inputColumn
+                      refId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input].Columns[categoryid]"
+                      cachedDataType="i4"
+                      cachedName="categoryid"
+                      externalMetadataColumnId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[categoryid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load dimAbsence\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load dimAbsence\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load dimAbsence\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load dimAbsence\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load dimAbsence\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [category], [categoryid] FROM [EDW].[DimAbsence]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[category]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[categoryid]"
+                      cachedDataType="i4"
+                      cachedName="categoryid"
+                      externalMetadataColumnId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[categoryid]"
+                      lineageId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[categoryid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="255"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[categoryid]"
+                      dataType="i4"
+                      name="categoryid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load dimAbsence\Type 1 Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Type 1 Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Type1Count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load dimAbsence\Type 1 Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load dimAbsence\Type 1 Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load dimAbsence\Type 1 Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load dimAbsence.Paths[Changing Attribute Updates Output]"
+              endId="Package\Load dimAbsence\Type 1 Count.Inputs[Row Count Input 1]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Load dimAbsence.Paths[New Output]"
+              endId="Package\Load dimAbsence\Current Count.Inputs[Row Count Input 1]"
+              name="New Output"
+              startId="Package\Load dimAbsence\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Load dimAbsence.Paths[OLE DB Source Output]"
+              endId="Package\Load dimAbsence\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load dimAbsence\Extract dimAbsence from staging.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load dimAbsence.Paths[Row Count Output 1]"
+              endId="Package\Load dimAbsence\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Load dimAbsence\Current Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load dimAbsence.Paths[Row Count Output 11]"
+              endId="Package\Load dimAbsence\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Load dimAbsence\Type 1 Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Metrics"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0fd3e2a4-b589-48fe-a12b-07e8caf19be8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Metrics"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F9EE1470-EF77-404E-B3C2-2CCE34EB3878}"
+          SQLTask:SqlStatementSource="DECLARE @PackageID INT =? &#xA;DECLARE @PreCount INT=?&#xA;DECLARE @CurrentCount INT=?&#xA;DECLARE @Type1Count INT=?&#xA;DECLARE @Type2Count INT=?&#xA;DECLARE @PostCount INT=?&#xA;&#xA;INSERT INTO control.metrics(PackageID, PreCount, CurrentCount, Type1Count, Type2Count, PostCount, RunDate)&#xA;VALUES (@PackageID, @PreCount, @CurrentCount, @Type1Count, @Type2Count, @PostCount, GETDATE())&#xA;&#xA;UPDATE control.Package SET LastDateRun=GETDATE() WHERE PackageID=@PackageID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PreCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::CurrentCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::Type1Count"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::Type2Count"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::PostCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post Count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A2B9B9DA-05AA-4479-BBE5-E1C44278D066}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post Count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as PostCount FROM EDW.DimAbsence"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PostCount"
+            SQLTask:DtsVariableName="User::PostCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PreCount dimAbsence"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0E8BD1CE-D209-4C9F-8FB6-7A5A67315F8F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PreCount dimAbsence"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as PreCount FROM EDW.DimAbsence"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PreCount"
+            SQLTask:DtsVariableName="User::PreCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A48912BC-C8D3-47DB-9974-3B325AB73CB5}"
+      DTS:From="Package\PreCount dimAbsence"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load dimAbsence" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{312D5F30-B5D5-4829-BBF8-5330C1EF5B0F}"
+      DTS:From="Package\Load dimAbsence"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Post Count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{32F12CA9-1521-4FF5-B51B-292B9F2E1E2C}"
+      DTS:From="Package\Post Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Metrics" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\PreCount dimAbsence"
+          TopLeft="358.46155160983,38.6060620006671" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Load dimAbsence"
+          TopLeft="383.846167925547,117.000004226511" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="449.26155160983,80.2060620006671">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.9846163157176,36.7939422258443"
+              Start="0,0"
+              End="14.9846163157176,29.2939422258443">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3969711129221" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3969711129221"
+                    Point2="0,18.3969711129221"
+                    Point3="4,18.3969711129221" />
+                  <mssgle:LineSegment
+                    End="10.9846163157176,18.3969711129221" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.9846163157176,18.3969711129221"
+                    Point2="14.9846163157176,18.3969711129221"
+                    Point3="14.9846163157176,22.3969711129221" />
+                  <mssgle:LineSegment
+                    End="14.9846163157176,29.2939422258443" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Post Count"
+          TopLeft="407.30770724765,190.272734146145" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="468.176937586599,158.600004226511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6727299196335"
+              Start="0,0"
+              End="0,24.1727299196335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1727299196335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Metrics"
+          TopLeft="411.923092032326,263.939403473948" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="472.10770724765,231.872734146145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.61538478467588,32.0666693278034"
+              Start="0,0"
+              End="8.61538478467588,24.5666693278034">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.0333346639017" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0333346639017"
+                    Point2="0,16.0333346639017"
+                    Point3="4,16.0333346639017" />
+                  <mssgle:LineSegment
+                    End="4.61538478467588,16.0333346639017" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.61538478467588,16.0333346639017"
+                    Point2="8.61538478467588,16.0333346639017"
+                    Point3="8.61538478467588,20.0333346639017" />
+                  <mssgle:LineSegment
+                    End="8.61538478467588,24.5666693278034" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load dimAbsence">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="233.6,41.6"
+          Id="Package\Load dimAbsence\Extract dimAbsence from staging"
+          TopLeft="196.592307791061,5.50000000000007" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Load dimAbsence\Slowly Changing Dimension"
+          TopLeft="209.392307791061,107.1" />
+        <EdgeLayout
+          Id="Package\Load dimAbsence.Paths[OLE DB Source Output]"
+          TopLeft="313.392307791061,47.1000000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load dimAbsence\Insert Destination"
+          TopLeft="0.115384417878133,266.609093001001" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load dimAbsence\OLE DB Command"
+          TopLeft="445.992315677214,245.730304367987" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Load dimAbsence\Current Count"
+          TopLeft="82.6923107254436,186.490915452022" />
+        <EdgeLayout
+          Id="Package\Load dimAbsence.Paths[New Output]"
+          TopLeft="280.058974457728,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-124.966663732284,37.7909154520219"
+              Start="0,0"
+              End="-124.966663732284,30.2909154520219">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.2894543431844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2894543431844"
+                    Point2="0,15.2894543431844"
+                    Point3="-4,15.2894543431844" />
+                  <mssgle:LineSegment
+                    End="-120.966663732284,15.2894543431844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-120.966663732284,15.2894543431844"
+                    Point2="-124.966663732284,15.2894543431844"
+                    Point3="-124.966663732284,19.2894543431844" />
+                  <mssgle:LineSegment
+                    End="-124.966663732284,30.2909154520219" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.5747185848921,20.2894543431844,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load dimAbsence.Paths[Row Count Output 1]"
+          TopLeft="155.092310725444,228.090915452022">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.7769263075654,38.5181775489787"
+              Start="0,0"
+              End="-73.7769263075654,31.0181775489787">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2590887744893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2590887744893"
+                    Point2="0,19.2590887744893"
+                    Point3="-4,19.2590887744893" />
+                  <mssgle:LineSegment
+                    End="-69.7769263075654,19.2590887744893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.7769263075654,19.2590887744893"
+                    Point2="-73.7769263075654,19.2590887744893"
+                    Point3="-73.7769263075654,23.2590887744893" />
+                  <mssgle:LineSegment
+                    End="-73.7769263075654,31.0181775489787" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Load dimAbsence\Type 1 Count"
+          TopLeft="493.461556561601,179.400006104961" />
+        <EdgeLayout
+          Id="Package\Load dimAbsence.Paths[Changing Attribute Updates Output]"
+          TopLeft="346.725641124394,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="217.535915437206,30.7000061049606"
+              Start="0,0"
+              End="217.535915437206,23.2000061049606">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.42061315696879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.42061315696879"
+                    Point2="0,12.4206131569688"
+                    Point3="4,12.4206131569688" />
+                  <mssgle:LineSegment
+                    End="213.535915437206,12.4206131569688" />
+                  <mssgle:CubicBezierSegment
+                    Point1="213.535915437206,12.4206131569688"
+                    Point2="217.535915437206,12.4206131569688"
+                    Point3="217.535915437206,16.4206131569688" />
+                  <mssgle:LineSegment
+                    End="217.535915437206,23.2000061049606" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="30.2340514686031,17.4206131569688,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load dimAbsence.Paths[Row Count Output 11]"
+          TopLeft="564.261556561601,221.000006104961">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.8692408843862,24.7302982630262"
+              Start="0,0"
+              End="-35.8692408843862,17.2302982630262">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.36514913151308" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.36514913151308"
+                    Point2="0,12.3651491315131"
+                    Point3="-4,12.3651491315131" />
+                  <mssgle:LineSegment
+                    End="-31.8692408843862,12.3651491315131" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.8692408843862,12.3651491315131"
+                    Point2="-35.8692408843862,12.3651491315131"
+                    Point3="-35.8692408843862,16.3651491315131" />
+                  <mssgle:LineSegment
+                    End="-35.8692408843862,17.2302982630262" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load dimAbsence\Extract dimAbsence from staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load dimAbsence\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{F3C645DE-6893-447D-A8D1-465CA5CB16D2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[EDW].[DimAbsence]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[category]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;category&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[categoryid]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;categoryid&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract dimAbsence from staging.Outputs[OLE DB Source Output].Columns[EffectiveStartDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;EffectiveStartDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load dimAbsence\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

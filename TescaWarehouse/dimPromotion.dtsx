@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/10/2024 1:36:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G6U1K7"
+  DTS:CreatorName="DESKTOP-9G6U1K7\HP SPECTRE"
+  DTS:DTSID="{6E1CC5AB-06D0-454D-8165-3362E5E26D98}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{140FB761-AB55-45F9-A7EE-30B4B8E0ED6E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4CB7F8D4-BE58-4B13-BF4E-644DFBB10FAF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4B11AB20-C175-4053-B113-74637440452C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">17</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C68264ED-1145-4F53-81C6-6BF7035BA3A7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PostCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FC341BF6-F69E-453B-9390-860F490489B5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PreCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B01F462-07BC-4BB9-B011-704E8E30B317}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Type1Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A92B9F86-9D51-4120-AA7C-31820E0B25B2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Type2Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Metrics"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EF7A6890-6900-41DB-ABBF-537C4E3F15DE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Metrics"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F9EE1470-EF77-404E-B3C2-2CCE34EB3878}"
+          SQLTask:SqlStatementSource="DECLARE @PackageID INT =? &#xA;DECLARE @PreCount INT=?&#xA;DECLARE @CurrentCount INT=?&#xA;DECLARE @Type1Count INT=?&#xA;DECLARE @Type2Count INT=?&#xA;DECLARE @PostCount INT=?&#xA;&#xA;INSERT INTO control.metrics(PackageID, PreCount, CurrentCount, Type1Count, Type2Count, PostCount, RunDate)&#xA;VALUES (@PackageID, @PreCount, @CurrentCount, @Type1Count, @Type2Count, @PostCount, GETDATE())&#xA;&#xA;UPDATE control.Package SET LastDateRun=GETDATE() WHERE PackageID=@PackageID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PreCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::CurrentCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::Type1Count"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::Type2Count"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::PostCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Promotion"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8947378C-EA27-429E-A495-87A479196D73}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Promotion"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Promotion\Current Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Current Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CurrentCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Promotion\Current Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\Current Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load Promotion\Current Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Promotion\EffectiveStartDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="EffectiveStartDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Promotion\EffectiveStartDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Promotion\EffectiveStartDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Output].Columns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Output].Columns[EffectiveStartDate]"
+                      name="EffectiveStartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Promotion\EffectiveStartDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Promotion\Extract from Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract from Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT PromotionID, Promotion, StartDate, EndDate, DiscountPercent FROM  staging.Promotion</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Promotion\Extract from Staging.Connections[OleDbConnection]"
+                  connectionManagerID="{9F24E1A4-F608-46D2-9F5F-CD4033C68312}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[PromotionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[PromotionID]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[PromotionID]"
+                      name="PromotionID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[Promotion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[Promotion]"
+                      length="50"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[Promotion]"
+                      name="Promotion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[DiscountPercent]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[DiscountPercent]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[DiscountPercent]"
+                      name="DiscountPercent"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[PromotionID]"
+                      dataType="i4"
+                      name="PromotionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[Promotion]"
+                      dataType="wstr"
+                      length="50"
+                      name="Promotion" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      dataType="dbDate"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].ExternalColumns[DiscountPercent]"
+                      dataType="r8"
+                      name="DiscountPercent" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[PromotionID]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[PromotionID]"
+                      name="PromotionID" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[Promotion]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[Promotion]"
+                      name="Promotion" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      name="StartDate" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      name="EndDate" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[DiscountPercent]"
+                      dataType="r8"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[DiscountPercent]"
+                      name="DiscountPercent" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Promotion\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EDW].[DimPromotion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Promotion\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].Columns[PromotionID]"
+                      cachedDataType="i4"
+                      cachedName="PromotionID"
+                      externalMetadataColumnId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[PromotionID]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].Columns[Promotion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Promotion"
+                      externalMetadataColumnId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Promotion]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[Promotion]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                      cachedDataType="dbDate"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].Columns[EndDate]"
+                      cachedDataType="dbDate"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[EndDate]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].Columns[DiscountPercent]"
+                      cachedDataType="r8"
+                      cachedName="DiscountPercent"
+                      externalMetadataColumnId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiscountPercent]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[DiscountPercent]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].Columns[EffectiveStartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveStartDate"
+                      externalMetadataColumnId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveStartDate]"
+                      lineageId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Output].Columns[EffectiveStartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionSK]"
+                      dataType="i4"
+                      name="PromotionSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
+                      dataType="i4"
+                      name="PromotionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Promotion]"
+                      dataType="wstr"
+                      length="50"
+                      name="Promotion" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      dataType="dbDate"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiscountPercent]"
+                      dataType="r8"
+                      name="DiscountPercent" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveStartDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Promotion\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Promotion\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Promotion\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [EDW].[DimPromotion] SET [DiscountPercent] = ?,[EndDate] = ?,[Promotion] = ?,[StartDate] = ? , EffectiveStartDate=GETDATE() WHERE [PromotionID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Promotion\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].Columns[DiscountPercent]"
+                      cachedDataType="r8"
+                      cachedName="DiscountPercent"
+                      externalMetadataColumnId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[DiscountPercent]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].Columns[EndDate]"
+                      cachedDataType="dbDate"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[EndDate]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].Columns[Promotion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Promotion"
+                      externalMetadataColumnId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[Promotion]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].Columns[PromotionID]"
+                      cachedDataType="i4"
+                      cachedName="PromotionID"
+                      externalMetadataColumnId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[PromotionID]" />
+                    <inputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].Columns[StartDate]"
+                      cachedDataType="dbDate"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[StartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbDate"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbDate"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Promotion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Promotion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Promotion\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [DiscountPercent], [EndDate], [Promotion], [PromotionID], [StartDate] FROM [EDW].[DimPromotion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[DiscountPercent]"
+                      cachedDataType="r8"
+                      cachedName="DiscountPercent"
+                      externalMetadataColumnId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[DiscountPercent]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[DiscountPercent]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[EndDate]"
+                      cachedDataType="dbDate"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EndDate]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[EndDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Promotion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Promotion"
+                      externalMetadataColumnId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Promotion]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[Promotion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PromotionID]"
+                      cachedDataType="i4"
+                      cachedName="PromotionID"
+                      externalMetadataColumnId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PromotionID]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[PromotionID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StartDate]"
+                      cachedDataType="dbDate"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output].Columns[StartDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[DiscountPercent]"
+                      dataType="r8"
+                      name="DiscountPercent" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EndDate]"
+                      dataType="dbDate"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Promotion]"
+                      dataType="wstr"
+                      length="50"
+                      name="Promotion" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PromotionID]"
+                      dataType="i4"
+                      name="PromotionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Promotion\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Promotion\Type 1 Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Type 1 Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Type1Count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Promotion\Type 1 Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Promotion\Type 1 Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load Promotion\Type 1 Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Promotion.Paths[Changing Attribute Updates Output]"
+              endId="Package\Load Promotion\Type 1 Count.Inputs[Row Count Input 1]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Load Promotion\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Load Promotion.Paths[Derived Column Output]"
+              endId="Package\Load Promotion\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Promotion\EffectiveStartDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Promotion.Paths[New Output]"
+              endId="Package\Load Promotion\Current Count.Inputs[Row Count Input 1]"
+              name="New Output"
+              startId="Package\Load Promotion\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Load Promotion.Paths[OLE DB Source Output]"
+              endId="Package\Load Promotion\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Promotion\Extract from Staging.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Promotion.Paths[Row Count Output 1]"
+              endId="Package\Load Promotion\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Load Promotion\Type 1 Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load Promotion.Paths[Row Count Output 11]"
+              endId="Package\Load Promotion\EffectiveStartDate.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Load Promotion\Current Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post Count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{91D71846-2E17-456B-B649-9A7C705E0DC7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post Count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource="  SELECT COUNT(*) as PostCount FROM EDW.DimPromotion"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PostCount"
+            SQLTask:DtsVariableName="User::PostCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PreCount"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1C106B07-6200-4ACB-9B79-DBB780E86DB7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PreCount"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource=" SELECT COUNT(*) as PreCount FROM EDW.DimPromotion"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PreCount"
+            SQLTask:DtsVariableName="User::PreCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5BFF96A8-2362-448C-9365-3BF848B3304F}"
+      DTS:From="Package\PreCount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Promotion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BDBB31E0-4C36-497C-81B1-2D952C0BEFAE}"
+      DTS:From="Package\Load Promotion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Post Count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E798EF87-9E07-4B2B-9DFC-509BCA2C9E28}"
+      DTS:From="Package\Post Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Metrics" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Metrics"
+          TopLeft="339.615397072403,271.42425222918" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Promotion"
+          TopLeft="335.38462768645,124.484852981743" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Post Count"
+          TopLeft="346.153858850694,198.151522309546" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\PreCount"
+          TopLeft="336.153858483896,52.3939412866196" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="396.953858483896,93.9939412866196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.8307692025539,30.4909116951232"
+              Start="0,0"
+              End="14.8307692025539,22.9909116951232">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.2454558475616" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2454558475616"
+                    Point2="0,15.2454558475616"
+                    Point3="4,15.2454558475616" />
+                  <mssgle:LineSegment
+                    End="10.8307692025539,15.2454558475616" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.8307692025539,15.2454558475616"
+                    Point2="14.8307692025539,15.2454558475616"
+                    Point3="14.8307692025539,19.2454558475616" />
+                  <mssgle:LineSegment
+                    End="14.8307692025539,22.9909116951232" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="411.369243268572,166.084852981743">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0666693278035"
+              Start="0,0"
+              End="0,24.5666693278035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5666693278035" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="409.684627961549,239.751522309546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6727299196334"
+              Start="0,0"
+              End="0,24.1727299196334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1727299196334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Promotion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load Promotion\OLE DB Command"
+          TopLeft="493.684625118866,282.760608735974" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Load Promotion\Current Count"
+          TopLeft="158.07692887515,192.636370595165" />
+        <NodeLayout
+          Size="175.2,54"
+          Id="Package\Load Promotion\Extract from Staging"
+          TopLeft="335.023081028391,15.7424246124218" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Load Promotion\Slowly Changing Dimension"
+          TopLeft="318.623081028391,117.342424612422" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Load Promotion\Type 1 Count"
+          TopLeft="594.615406425748,202.878795207587" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Promotion\Insert Destination"
+          TopLeft="90.5000031177815,335.942428838933" />
+        <EdgeLayout
+          Id="Package\Load Promotion.Paths[Row Count Output 1]"
+          TopLeft="665.415406425748,244.478795207587">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89.3307813068824,38.2818135283865"
+              Start="0,0"
+              End="-89.3307813068824,30.7818135283865">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1409067641933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1409067641933"
+                    Point2="0,19.1409067641933"
+                    Point3="-4,19.1409067641933" />
+                  <mssgle:LineSegment
+                    End="-85.3307813068824,19.1409067641933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85.3307813068824,19.1409067641933"
+                    Point2="-89.3307813068824,19.1409067641933"
+                    Point3="-89.3307813068824,23.1409067641933" />
+                  <mssgle:LineSegment
+                    End="-89.3307813068824,30.7818135283865" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Promotion.Paths[OLE DB Source Output]"
+          TopLeft="422.623081028391,69.7424246124218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6"
+              Start="0,0"
+              End="0,40.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Promotion.Paths[New Output]"
+          TopLeft="389.289747695058,158.942424612422">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.812818819908,33.6939459827433"
+              Start="0,0"
+              End="-158.812818819908,26.1939459827433">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.63190180981216" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.63190180981216"
+                    Point2="0,13.6319018098122"
+                    Point3="-4,13.6319018098122" />
+                  <mssgle:LineSegment
+                    End="-154.812818819908,13.6319018098122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.812818819908,13.6319018098122"
+                    Point2="-158.812818819908,13.6319018098122"
+                    Point3="-158.812818819908,17.6319018098122" />
+                  <mssgle:LineSegment
+                    End="-158.812818819908,26.1939459827433" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.497796128704,18.6319018098122,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Promotion.Paths[Changing Attribute Updates Output]"
+          TopLeft="455.956414361724,158.942424612422">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.458992064024,43.9363705951651"
+              Start="0,0"
+              End="209.458992064024,36.4363705951651">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7757835232348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7757835232348"
+                    Point2="0,17.7757835232348"
+                    Point3="4,17.7757835232348" />
+                  <mssgle:LineSegment
+                    End="205.458992064024,17.7757835232348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.458992064024,17.7757835232348"
+                    Point2="209.458992064024,17.7757835232348"
+                    Point3="209.458992064024,21.7757835232348" />
+                  <mssgle:LineSegment
+                    End="209.458992064024,36.4363705951651" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.1955897820117,22.7757835232348,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Load Promotion\EffectiveStartDate"
+          TopLeft="161.153852064934,257.46667449354" />
+        <EdgeLayout
+          Id="Package\Load Promotion.Paths[Row Count Output 11]"
+          TopLeft="230.47692887515,234.236370595165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.2769231897842,23.2303038983745"
+              Start="0,0"
+              End="12.2769231897842,15.7303038983745">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.61515194918726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.61515194918726"
+                    Point2="0,11.6151519491873"
+                    Point3="4,11.6151519491873" />
+                  <mssgle:LineSegment
+                    End="8.27692318978418,11.6151519491873" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.27692318978418,11.6151519491873"
+                    Point2="12.2769231897842,11.6151519491873"
+                    Point3="12.2769231897842,15.6151519491873" />
+                  <mssgle:LineSegment
+                    End="12.2769231897842,15.7303038983745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Promotion.Paths[Derived Column Output]"
+          TopLeft="242.753852064934,299.06667449354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71.0538489471527,36.8757543453937"
+              Start="0,0"
+              End="-71.0538489471527,29.3757543453937">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.4378771726968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4378771726968"
+                    Point2="0,18.4378771726968"
+                    Point3="-4,18.4378771726968" />
+                  <mssgle:LineSegment
+                    End="-67.0538489471527,18.4378771726968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.0538489471527,18.4378771726968"
+                    Point2="-71.0538489471527,18.4378771726968"
+                    Point3="-71.0538489471527,22.4378771726968" />
+                  <mssgle:LineSegment
+                    End="-71.0538489471527,29.3757543453937" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Promotion\Extract from Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Promotion\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{F3C645DE-6893-447D-A8D1-465CA5CB16D2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[EDW].[DimPromotion]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging.Outputs[OLE DB Source Output].Columns[DiscountPercent]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;DiscountPercent&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging.Outputs[OLE DB Source Output].Columns[EndDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;EndDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging.Outputs[OLE DB Source Output].Columns[Promotion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Promotion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging.Outputs[OLE DB Source Output].Columns[PromotionID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PromotionID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging.Outputs[OLE DB Source Output].Columns[StartDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;StartDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Promotion\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

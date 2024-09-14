@@ -1,0 +1,2988 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/6/2024 11:41:30 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G6U1K7"
+  DTS:CreatorName="DESKTOP-9G6U1K7\HP SPECTRE"
+  DTS:DTSID="{C7B4A09C-918B-4CB4-820A-DA35586DA0CF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{1BC7EDF9-C8EC-484D-B934-3EC10337D995}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OvertimeAnalysis]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{66D2C1A5-F923-41D5-89B3-27A228A7D8C7}"
+      DTS:ObjectName="OvertimeAnalysis">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\PBN\Tesca Project\Tesca Grocery Store\OvertimeData_New.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OvertimeID"
+              DTS:DTSID="{6D7F374B-D551-4A81-9C55-75F1B648031A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeNo"
+              DTS:DTSID="{6882B05A-C2E7-45C3-999D-4C029283F1C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{2C68A709-AA50-41EB-8AD7-21D0EFFF9F94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{D7C785F6-FABD-4862-88A4-D3DAEFD77BF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartOvertime"
+              DTS:DTSID="{3E173EFC-6510-48F4-AD21-61D2B2A624D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndOvertime"
+              DTS:DTSID="{5324411F-3A83-461D-8484-B6C26B81E87D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5551D2A6-4FA8-495E-A126-95CFE0E6DA43}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="edwCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7BF9E0E1-85F7-460B-82EC-C9B2EC8492A9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">13</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0912BB8E-96FA-4139-B1D9-DBB2FB6278B8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="stgDesCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BAE13981-10BE-46F1-9471-0628A3F197A7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="stgSourceCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DesCount"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9204605A-173E-41AA-B23F-F904EA4FDC74}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DesCount"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8C83C4C6-553D-4DA8-A846-C95C8089053D}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as DesCount FROM staging.OvertimeAnalysis"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DesCount"
+            SQLTask:DtsVariableName="User::stgDesCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\edwCount"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1AB91AE8-B792-4830-B9CC-9422E5ABF812}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="edwCount"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7847ABF-109A-421B-87A5-0C6D5934EA55}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as edwCount FROM EDW.Fact_OvertimeAnalysis "
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="edwCount"
+            SQLTask:DtsVariableName="User::edwCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Overtime"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{67443f18-691f-40eb-8f91-6e0374bb4432}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Overtime"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Overtime\Begin to N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\Begin to N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Overtime\Begin to N-1.Inputs[Conditional Split Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Begin to N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\Load Overtime\Begin to N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]} &lt;= (DT_DBDATE)[DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)StartOvertime &lt;= (DT_DBDATE)DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Begin to N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load Overtime\Begin to N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Begin to N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load Overtime\Begin to N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\Begin to N-1, N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1, N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\Load Overtime\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Begin to N-1, N-1.Outputs[N-1]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Load Overtime\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load Overtime\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\Exclude today and future data"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Exclude today and future data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\Exclude today and future data.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Overtime\Exclude today and future data.Inputs[Conditional Split Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Exclude today and future data.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Load Overtime\Exclude today and future data.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]} &lt; (DT_DBDATE)[GETDATE]()</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)StartOvertime &lt; (DT_DBDATE)GETDATE()</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Exclude today and future data.Outputs[N+1]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="N+1"
+                  synchronousInputId="Package\Load Overtime\Exclude today and future data.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Exclude today and future data.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load Overtime\Exclude today and future data.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\Extract Overtime Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Extract Overtime Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Overtime\Extract Overtime Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OvertimeAnalysis]"
+                  connectionManagerRefId="Package.ConnectionManagers[OvertimeAnalysis]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[OvertimeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OvertimeID]"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[OvertimeID]"
+                      name="OvertimeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeNo]"
+                      length="50"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNo]"
+                      name="EmployeeNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartOvertime]"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]"
+                      name="StartOvertime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EndOvertime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndOvertime]"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EndOvertime]"
+                      name="EndOvertime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OvertimeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OvertimeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmployeeNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartOvertime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StartOvertime" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndOvertime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EndOvertime" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\Future Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Future Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\Future Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Future Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Overtime\Future Data.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\Future Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Overtime\Future Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Future Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Future Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Future Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Future Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\Load Overtime"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Overtime"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[OvertimeAnalysis]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Overtime\Load Overtime.Connections[OleDbConnection]"
+                  connectionManagerID="{8C83C4C6-553D-4DA8-A846-C95C8089053D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[OvertimeID]"
+                      cachedDataType="i4"
+                      cachedName="OvertimeID"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[OvertimeID]"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[OvertimeID]" />
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[EmployeeNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmployeeNo"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeNO]"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EmployeeNo]" />
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[StartOvertime]"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[StartOvertime]" />
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[EndOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EndOvertime"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[EndOvertime]"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EndOvertime]" />
+                    <inputColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\Load Overtime\LoadDate.Outputs[Derived Column Output].Columns[LoadDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[OvertimeID]"
+                      dataType="i4"
+                      name="OvertimeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeNO]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmployeeNO" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[StartOvertime]"
+                      dataType="dbTimeStamp"
+                      name="StartOvertime" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[EndOvertime]"
+                      dataType="dbTimeStamp"
+                      name="EndOvertime" />
+                    <externalMetadataColumn
+                      refId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Load Overtime.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Load Overtime.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Load Overtime.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Load Overtime.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Load Overtime.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\LoadDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="LoadDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\LoadDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\LoadDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Overtime\LoadDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\LoadDate.Outputs[Derived Column Output].Columns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Overtime\LoadDate.Outputs[Derived Column Output].Columns[LoadDate]"
+                      name="LoadDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\LoadDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Overtime\LoadDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\LoadDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Overtime\N-1.Inputs[Conditional Split Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\N-1.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\Load Overtime\N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]} == (DT_DBDATE)[DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)StartOvertime == (DT_DBDATE)DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load Overtime\N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Overtime\N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load Overtime\N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Overtime\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Overtime\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load Overtime\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 1].Columns[OvertimeID]"
+                      cachedDataType="i4"
+                      cachedName="OvertimeID"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[OvertimeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[OvertimeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 1].Columns[EmployeeNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmployeeNo"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EmployeeNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 1].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[FirstName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 1].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[LastName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[LastName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 1].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[StartOvertime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 1].Columns[EndOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EndOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EndOvertime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EndOvertime]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Overtime\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 2].Columns[OvertimeID]"
+                      cachedDataType="i4"
+                      cachedName="OvertimeID"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[OvertimeID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[OvertimeID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 2].Columns[EmployeeNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmployeeNo"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EmployeeNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 2].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[FirstName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 2].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[LastName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[LastName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 2].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[StartOvertime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Overtime\Union All.Inputs[Union All Input 2].Columns[EndOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EndOvertime"
+                      lineageId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output].Columns[EndOvertime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EndOvertime]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Overtime\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Overtime\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[OvertimeID]"
+                      dataType="i4"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[OvertimeID]"
+                      name="OvertimeID" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EmployeeNo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EmployeeNo]"
+                      name="EmployeeNo" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[StartOvertime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[StartOvertime]"
+                      name="StartOvertime" />
+                    <outputColumn
+                      refId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EndOvertime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Overtime\Union All.Outputs[Union All Output 1].Columns[EndOvertime]"
+                      name="EndOvertime" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Overtime.Paths[Begin to N-1]"
+              endId="Package\Load Overtime\Begin to N-1.Inputs[Conditional Split Input]"
+              name="Begin to N-1"
+              startId="Package\Load Overtime\Begin to N-1, N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\Load Overtime.Paths[Begin to N-11]"
+              endId="Package\Load Overtime\Union All.Inputs[Union All Input 1]"
+              name="Begin to N-1"
+              startId="Package\Load Overtime\Begin to N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\Load Overtime.Paths[Derived Column Output]"
+              endId="Package\Load Overtime\Load Overtime.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Overtime\LoadDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Overtime.Paths[Flat File Source Output]"
+              endId="Package\Load Overtime\Exclude today and future data.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Overtime\Extract Overtime Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Overtime.Paths[N+1]"
+              endId="Package\Load Overtime\Future Data.Inputs[Derived Column Input]"
+              name="N+1"
+              startId="Package\Load Overtime\Exclude today and future data.Outputs[N+1]" />
+            <path
+              refId="Package\Load Overtime.Paths[N-1]"
+              endId="Package\Load Overtime\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\Load Overtime\Exclude today and future data.Outputs[N-1]" />
+            <path
+              refId="Package\Load Overtime.Paths[N-11]"
+              endId="Package\Load Overtime\N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\Load Overtime\Begin to N-1, N-1.Outputs[N-1]" />
+            <path
+              refId="Package\Load Overtime.Paths[N-12]"
+              endId="Package\Load Overtime\Union All.Inputs[Union All Input 2]"
+              name="N-1"
+              startId="Package\Load Overtime\N-1.Outputs[N-1]" />
+            <path
+              refId="Package\Load Overtime.Paths[Union All Output 1]"
+              endId="Package\Load Overtime\LoadDate.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Load Overtime\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SourceCount"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{36299C3E-6D0E-426B-8905-A3F03360C2C4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SourceCount"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\SourceCount\Begin to N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SourceCount\Begin to N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SourceCount\Begin to N-1.Inputs[Conditional Split Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\Begin to N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\SourceCount\Begin to N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]} &lt;= (DT_DBDATE)[DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)StartOvertime &lt;= (DT_DBDATE)DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Begin to N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\SourceCount\Begin to N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Begin to N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\SourceCount\Begin to N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SourceCount\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Begin to N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\Begin to N-1, N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Begin to N-1, N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SourceCount\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\Begin to N-1, N-1.Outputs[Begin to N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Begin to N-1"
+                  synchronousInputId="Package\SourceCount\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">@[User::edwCount] &lt;= 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Begin to N-1, N-1.Outputs[N-1]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\SourceCount\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Begin to N-1, N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\SourceCount\Begin to N-1, N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SourceCount\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Begin to N-1, N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\Exclude today and future data"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Exclude today and future data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SourceCount\Exclude today and future data.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SourceCount\Exclude today and future data.Inputs[Conditional Split Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\Exclude today and future data.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\SourceCount\Exclude today and future data.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]} &lt; (DT_DBDATE)[GETDATE]()</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)StartOvertime &lt; (DT_DBDATE)GETDATE()</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Exclude today and future data.Outputs[N+1]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="N+1"
+                  synchronousInputId="Package\SourceCount\Exclude today and future data.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Exclude today and future data.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\SourceCount\Exclude today and future data.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SourceCount\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Exclude today and future data.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SourceCount\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OvertimeAnalysis]"
+                  connectionManagerRefId="Package.ConnectionManagers[OvertimeAnalysis]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[OvertimeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OvertimeID]"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[OvertimeID]"
+                      name="OvertimeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeNo]"
+                      length="50"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNo]"
+                      name="EmployeeNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartOvertime]"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]"
+                      name="StartOvertime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[EndOvertime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndOvertime]"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[EndOvertime]"
+                      name="EndOvertime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OvertimeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OvertimeID" />
+                    <externalMetadataColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmployeeNo" />
+                    <externalMetadataColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartOvertime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StartOvertime" />
+                    <externalMetadataColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndOvertime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EndOvertime" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\Future Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Future Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SourceCount\Future Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\Future Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\SourceCount\Future Data.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\Future Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\SourceCount\Future Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\Future Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Future Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SourceCount\Future Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\Future Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\N-1"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="N-1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SourceCount\N-1.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SourceCount\N-1.Inputs[Conditional Split Input].Columns[StartOvertime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartOvertime"
+                      lineageId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\N-1.Outputs[N-1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="N-1"
+                  synchronousInputId="Package\SourceCount\N-1.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_DBDATE)#{Package\SourceCount\Flat File Source.Outputs[Flat File Source Output].Columns[StartOvertime]} == (DT_DBDATE)[DATEADD]("day",-1,[GETDATE]())</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_DBDATE)StartOvertime == (DT_DBDATE)DATEADD("day",-1,GETDATE())</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\N-1.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\SourceCount\N-1.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SourceCount\N-1.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\SourceCount\N-1.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SourceCount\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\N-1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SourceCount\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SourceCount\N-1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\SourceCount"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="SourceCount">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::stgSourceCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\SourceCount\SourceCount.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\SourceCount.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\SourceCount\SourceCount.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SourceCount\SourceCount1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="SourceCount1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::stgSourceCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\SourceCount\SourceCount1.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SourceCount\SourceCount1.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\SourceCount\SourceCount1.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SourceCount.Paths[Begin to N-1]"
+              endId="Package\SourceCount\Begin to N-1.Inputs[Conditional Split Input]"
+              name="Begin to N-1"
+              startId="Package\SourceCount\Begin to N-1, N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\SourceCount.Paths[Begin to N-11]"
+              endId="Package\SourceCount\SourceCount.Inputs[Row Count Input 1]"
+              name="Begin to N-1"
+              startId="Package\SourceCount\Begin to N-1.Outputs[Begin to N-1]" />
+            <path
+              refId="Package\SourceCount.Paths[Flat File Source Output]"
+              endId="Package\SourceCount\Exclude today and future data.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\SourceCount\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\SourceCount.Paths[N+1]"
+              endId="Package\SourceCount\Future Data.Inputs[Derived Column Input]"
+              name="N+1"
+              startId="Package\SourceCount\Exclude today and future data.Outputs[N+1]" />
+            <path
+              refId="Package\SourceCount.Paths[N-1]"
+              endId="Package\SourceCount\Begin to N-1, N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\SourceCount\Exclude today and future data.Outputs[N-1]" />
+            <path
+              refId="Package\SourceCount.Paths[N-11]"
+              endId="Package\SourceCount\N-1.Inputs[Conditional Split Input]"
+              name="N-1"
+              startId="Package\SourceCount\Begin to N-1, N-1.Outputs[N-1]" />
+            <path
+              refId="Package\SourceCount.Paths[N-12]"
+              endId="Package\SourceCount\SourceCount1.Inputs[Row Count Input 1]"
+              name="N-1"
+              startId="Package\SourceCount\N-1.Outputs[N-1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging Overtime"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FB787E88-1EBF-4B92-B296-ED2FE4553C80}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging Overtime"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8C83C4C6-553D-4DA8-A846-C95C8089053D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.OvertimeAnalysis" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Metrics"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{46ee0ed1-18f1-4083-ad3d-8bc06eb441f1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Metrics"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A0CCCB70-1B27-42E7-8B90-53312AAF7390}"
+          SQLTask:SqlStatementSource="DECLARE @PackageID INT =? &#xA;DECLARE @StgSourceCount INT=?&#xA;DECLARE @stgDesCount INT=?&#xA;&#xA;&#xA;INSERT INTO control.metrics(PackageID, StgSourceCount, StgDesCount, RunDate)&#xA;VALUES (@PackageID,@StgSourceCount, @StgSourceCount, GETDATE())&#xA;&#xA;UPDATE control.Package SET LastDateRun=GETDATE() WHERE PackageID=@PackageID&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::stgSourceCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::stgDesCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{60A31E5E-BFEB-416E-A296-7F7768CED073}"
+      DTS:From="Package\Truncate Staging Overtime"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\edwCount" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{643168B0-2ED3-4C0D-BA2A-1183EA7DB953}"
+      DTS:From="Package\edwCount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SourceCount" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{AB7BB458-8F26-45A0-A9C0-F0F0D2CBBEAC}"
+      DTS:From="Package\SourceCount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Overtime" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{4226AD3B-FD87-4928-9BB3-79371EF61DCD}"
+      DTS:From="Package\Load Overtime"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\DesCount" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{FA76800F-3A8C-490F-AA91-9E4DAC90C536}"
+      DTS:From="Package\DesCount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update Metrics" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\edwCount"
+          TopLeft="391.538475900007,74.060608735974" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\SourceCount"
+          TopLeft="390.769245102561,147.333338655607" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Truncate Staging Overtime"
+          TopLeft="353.846166825154,8.27272757157154" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="457.153860501284,115.660608735974">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6727299196326"
+              Start="0,0"
+              End="0,24.1727299196326">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1727299196326" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Load Overtime"
+          TopLeft="388.846168108946,219.42425035073" />
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\DesCount"
+          TopLeft="398.076937678298,283.636373882452" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="461.261552893622,261.02425035073">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6121235317217"
+              Start="0,0"
+              End="0,15.1121235317217">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1121235317217" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="461.207706605754,188.933338655607">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4909116951235"
+              Start="0,0"
+              End="0,22.9909116951235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9909116951235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="455.292321362581,49.8727275715715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.1878811644025"
+              Start="0,0"
+              End="0,16.6878811644025">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6878811644025" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Update Metrics"
+          TopLeft="402.307707064251,369.515164863527" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="460.076937678298,325.236373882452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.630769385953,44.2787909810756"
+              Start="0,0"
+              End="16.630769385953,36.7787909810756">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1393954905378" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.1393954905378"
+                    Point2="0,22.1393954905378"
+                    Point3="4,22.1393954905378" />
+                  <mssgle:LineSegment
+                    End="12.630769385953,22.1393954905378" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.630769385953,22.1393954905378"
+                    Point2="16.630769385953,22.1393954905378"
+                    Point3="16.630769385953,26.1393954905378" />
+                  <mssgle:LineSegment
+                    End="16.630769385953,36.7787909810756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SourceCount">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\SourceCount\Begin to N-1, N-1"
+          TopLeft="212.307700095092,196.181825268696" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\SourceCount\SourceCount"
+          TopLeft="111.538465629668,373.060619537058" />
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\SourceCount\Exclude today and future data"
+          TopLeft="339.23078167368,117.787883042851" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\SourceCount\SourceCount1"
+          TopLeft="343.461551059633,375.424255986079" />
+        <NodeLayout
+          Size="95.2,41.6"
+          Id="Package\SourceCount\N-1"
+          TopLeft="344.615397255802,281.666676841601" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\SourceCount\Flat File Source"
+          TopLeft="329.230781306882,38.212122592497" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\SourceCount\Begin to N-1"
+          TopLeft="108.846157838607,285.212131515132" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\SourceCount\Future Data"
+          TopLeft="517.692326681149,222.181826207921" />
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[N-11]"
+          TopLeft="318.174366761759,237.781825268696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.0410304940431,43.8848515729056"
+              Start="0,0"
+              End="74.0410304940431,36.3848515729056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8133584709725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8133584709725"
+                    Point2="0,17.8133584709725"
+                    Point3="4,17.8133584709725" />
+                  <mssgle:LineSegment
+                    End="70.0410304940431,17.8133584709725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.0410304940431,17.8133584709725"
+                    Point2="74.0410304940431,17.8133584709725"
+                    Point3="74.0410304940431,21.8133584709725" />
+                  <mssgle:LineSegment
+                    End="74.0410304940431,36.3848515729056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.9149488407716,22.8133584709725,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[N-1]"
+          TopLeft="414.164115007014,159.387883042851">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.456414911921,36.7939422258444"
+              Start="0,0"
+              End="-121.456414911921,29.2939422258444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.8763996625356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.8763996625356"
+                    Point2="0,14.8763996625356"
+                    Point3="-4,14.8763996625356" />
+                  <mssgle:LineSegment
+                    End="-117.456414911921,14.8763996625356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.456414911921,14.8763996625356"
+                    Point2="-121.456414911921,14.8763996625356"
+                    Point3="-121.456414911921,18.8763996625356" />
+                  <mssgle:LineSegment
+                    End="-121.456414911921,29.2939422258444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-68.8337738622105,19.8763996625356,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[N+1]"
+          TopLeft="485.097448340347,159.387883042851">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.7948783408024,62.7939431650692"
+              Start="0,0"
+              End="99.7948783408024,55.2939431650692">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3886302581071" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3886302581071"
+                    Point2="0,25.3886302581071"
+                    Point3="4,25.3886302581071" />
+                  <mssgle:LineSegment
+                    End="95.7948783408024,25.3886302581071" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.7948783408024,25.3886302581071"
+                    Point2="99.7948783408024,25.3886302581071"
+                    Point3="99.7948783408024,29.3886302581071" />
+                  <mssgle:LineSegment
+                    End="99.7948783408024,55.2939431650692" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="39.9668727641512,30.3886302581071,19.8611328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[Flat File Source Output]"
+          TopLeft="404.430781306882,79.812122592497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.2000003667979,37.9757604503545"
+              Start="0,0"
+              End="45.2000003667979,30.4757604503545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9878802251772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9878802251772"
+                    Point2="0,18.9878802251772"
+                    Point3="4,18.9878802251772" />
+                  <mssgle:LineSegment
+                    End="41.2000003667979,18.9878802251772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.2000003667979,18.9878802251772"
+                    Point2="45.2000003667979,18.9878802251772"
+                    Point3="45.2000003667979,22.9878802251772" />
+                  <mssgle:LineSegment
+                    End="45.2000003667979,30.4757604503545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[Begin to N-11]"
+          TopLeft="179.192311734137,326.812131515132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.248488021926"
+              Start="0,0"
+              End="0,38.748488021926">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.748488021926" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.89556640625,13.681861198463,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[Begin to N-1]"
+          TopLeft="267.241033428426,237.781825268696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89.5948755898185,47.4303062464361"
+              Start="0,0"
+              End="-89.5948755898185,39.9303062464361">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2524986931347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2524986931347"
+                    Point2="0,19.2524986931347"
+                    Point3="-4,19.2524986931347" />
+                  <mssgle:LineSegment
+                    End="-85.5948755898185,19.2524986931347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85.5948755898185,19.2524986931347"
+                    Point2="-89.5948755898185,19.2524986931347"
+                    Point3="-89.5948755898185,23.2524986931347" />
+                  <mssgle:LineSegment
+                    End="-89.5948755898185,39.9303062464361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-72.6930042011593,24.2524986931347,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SourceCount.Paths[N-12]"
+          TopLeft="392.215397255802,323.266676841601">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.2461538038309,52.1575791444777"
+              Start="0,0"
+              End="23.2461538038309,44.6575791444777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0787895722388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0787895722388"
+                    Point2="0,26.0787895722388"
+                    Point3="4,26.0787895722388" />
+                  <mssgle:LineSegment
+                    End="19.2461538038309,26.0787895722388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.2461538038309,26.0787895722388"
+                    Point2="23.2461538038309,26.0787895722388"
+                    Point3="23.2461538038309,30.0787895722388" />
+                  <mssgle:LineSegment
+                    End="23.2461538038309,44.6575791444777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.51751049566545,31.0787895722388,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="edwCount&lt;=0"
+          ParentId="Package\SourceCount"
+          FontInfo="{assembly:Null}"
+          Size="106.4,40"
+          Id="b75b91ef-03b2-4030-94db-9ecc7df85423"
+          TopLeft="105.3846192501,198.545461717716" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Load Overtime">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Load Overtime\Begin to N-1, N-1"
+          TopLeft="212.307700095092,196.181825268696" />
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\Load Overtime\Exclude today and future data"
+          TopLeft="339.23078167368,117.787883042851" />
+        <NodeLayout
+          Size="95.2,41.6"
+          Id="Package\Load Overtime\N-1"
+          TopLeft="344.615397255802,281.666676841601" />
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\Load Overtime\Extract Overtime Flat File Source"
+          TopLeft="329.230781306882,38.212122592497" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Overtime\Begin to N-1"
+          TopLeft="92.846157838607,271.712131515132" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\Load Overtime\Future Data"
+          TopLeft="517.692326681149,222.181826207921" />
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[N-11]"
+          TopLeft="318.174366761759,237.781825268696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.0410304940431,43.8848515729056"
+              Start="0,0"
+              End="74.0410304940431,36.3848515729056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8133584709725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8133584709725"
+                    Point2="0,17.8133584709725"
+                    Point3="4,17.8133584709725" />
+                  <mssgle:LineSegment
+                    End="70.0410304940431,17.8133584709725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.0410304940431,17.8133584709725"
+                    Point2="74.0410304940431,17.8133584709725"
+                    Point3="74.0410304940431,21.8133584709725" />
+                  <mssgle:LineSegment
+                    End="74.0410304940431,36.3848515729056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.9149488407716,22.8133584709725,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[N-1]"
+          TopLeft="414.164115007014,159.387883042851">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.456414911921,36.7939422258444"
+              Start="0,0"
+              End="-121.456414911921,29.2939422258444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.8763996625356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.8763996625356"
+                    Point2="0,14.8763996625356"
+                    Point3="-4,14.8763996625356" />
+                  <mssgle:LineSegment
+                    End="-117.456414911921,14.8763996625356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.456414911921,14.8763996625356"
+                    Point2="-121.456414911921,14.8763996625356"
+                    Point3="-121.456414911921,18.8763996625356" />
+                  <mssgle:LineSegment
+                    End="-121.456414911921,29.2939422258444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-68.8337738622105,19.8763996625356,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[N+1]"
+          TopLeft="485.097448340347,159.387883042851">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.7948783408024,62.7939431650692"
+              Start="0,0"
+              End="99.7948783408024,55.2939431650692">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3886302581071" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3886302581071"
+                    Point2="0,25.3886302581071"
+                    Point3="4,25.3886302581071" />
+                  <mssgle:LineSegment
+                    End="95.7948783408024,25.3886302581071" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.7948783408024,25.3886302581071"
+                    Point2="99.7948783408024,25.3886302581071"
+                    Point3="99.7948783408024,29.3886302581071" />
+                  <mssgle:LineSegment
+                    End="99.7948783408024,55.2939431650692" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="39.9668727641512,30.3886302581071,19.8611328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[Flat File Source Output]"
+          TopLeft="447.630781490281,79.812122592497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.975760450354"
+              Start="0,0"
+              End="0,30.475760450354">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.475760450354" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[Begin to N-1]"
+          TopLeft="267.241033428425,237.781825268696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-105.594875589818,33.930306246436"
+              Start="0,0"
+              End="-105.594875589818,26.430306246436">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.77269573746959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.77269573746959"
+                    Point2="0,13.7726957374696"
+                    Point3="-4,13.7726957374696" />
+                  <mssgle:LineSegment
+                    End="-101.594875589818,13.7726957374696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-101.594875589818,13.7726957374696"
+                    Point2="-105.594875589818,13.7726957374696"
+                    Point3="-105.594875589818,17.7726957374696" />
+                  <mssgle:LineSegment
+                    End="-105.594875589818,26.430306246436" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80.6930042011592,18.7726957374696,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="edwCount&lt;=0"
+          ParentId="Package\Load Overtime"
+          FontInfo="{assembly:Null}"
+          Size="106.4,40"
+          Id="b75b91ef-03b2-4030-94db-9ecc7df85423"
+          TopLeft="105.3846192501,198.545461717716" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Load Overtime\Union All"
+          TopLeft="230.5,356" />
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[Begin to N-11]"
+          TopLeft="161.646157838607,313.312131515132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.853842161393,42.6878684848679"
+              Start="0,0"
+              End="128.853842161393,35.1878684848679">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.343934242434" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.343934242434"
+                    Point2="0,21.343934242434"
+                    Point3="4,21.343934242434" />
+                  <mssgle:LineSegment
+                    End="124.853842161393,21.343934242434" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.853842161393,21.343934242434"
+                    Point2="128.853842161393,21.343934242434"
+                    Point3="128.853842161393,25.343934242434" />
+                  <mssgle:LineSegment
+                    End="128.853842161393,35.1878684848679" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.5313546744465,26.343934242434,55.7911328125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[N-12]"
+          TopLeft="392.215397255802,323.266676841601">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.0487305891354,32.7333231583989"
+              Start="0,0"
+              End="-83.0487305891354,25.2333231583989">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3815729227362" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3815729227362"
+                    Point2="0,19.3815729227362"
+                    Point3="-4,19.3815729227362" />
+                  <mssgle:LineSegment
+                    End="-79.0487305891354,19.3815729227362" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.0487305891354,19.3815729227362"
+                    Point2="-83.0487305891354,19.3815729227362"
+                    Point3="-83.0487305891354,23.3815729227362" />
+                  <mssgle:LineSegment
+                    End="-83.0487305891354,25.2333231583989" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.6299317008177,24.3815729227362,16.2111328125,9.294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Load Overtime\LoadDate"
+          TopLeft="224.5,439" />
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[Union All Output 1]"
+          TopLeft="288.3,397.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.4000000000001"
+              Start="0,0"
+              End="0,33.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Load Overtime\Load Overtime"
+          TopLeft="228,513" />
+        <EdgeLayout
+          Id="Package\Load Overtime.Paths[Derived Column Output]"
+          TopLeft="286.1,480.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,32.4"
+              Start="0,0"
+              End="15.5,24.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.2"
+                    Point2="0,16.2"
+                    Point3="4,16.2" />
+                  <mssgle:LineSegment
+                    End="11.5,16.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,16.2"
+                    Point2="15.5,16.2"
+                    Point3="15.5,20.2" />
+                  <mssgle:LineSegment
+                    End="15.5,24.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Overtime\Load Overtime">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

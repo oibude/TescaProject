@@ -1,0 +1,2045 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/10/2024 3:53:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9G6U1K7"
+  DTS:CreatorName="DESKTOP-9G6U1K7\HP SPECTRE"
+  DTS:DTSID="{6DF50C6E-DD8D-430A-84C4-ADE01725EA45}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{B8675268-ACD7-46EA-9F7E-8D07CC965FA5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8749E0D1-C7EC-41E6-938D-9EF52C8F5AFE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E8C56D63-C57E-490D-9070-FA52E6CAC1D3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">22</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9664A1AC-05A9-4BDA-9E20-7F5CEAF116B5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PostCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C42FFAE-FCDE-45BD-A51B-41FBEF4D8932}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PreCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5C8B4E89-6F7A-453D-B044-F92B1784548A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Type1Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{40852687-E683-4281-AA2D-9D3E1ADD631F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Type2Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Metrics"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FEE6C6EE-28C5-42D8-8941-8272AF7BD930}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Metrics"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F9EE1470-EF77-404E-B3C2-2CCE34EB3878}"
+          SQLTask:SqlStatementSource="DECLARE @PackageID INT =? &#xA;DECLARE @PreCount INT=?&#xA;DECLARE @CurrentCount INT=?&#xA;DECLARE @Type1Count INT=?&#xA;DECLARE @Type2Count INT=?&#xA;DECLARE @PostCount INT=?&#xA;&#xA;INSERT INTO control.metrics(PackageID, PreCount, CurrentCount, Type1Count, Type2Count, PostCount, RunDate)&#xA;VALUES (@PackageID, @PreCount, @CurrentCount, @Type1Count, @Type2Count, @PostCount, GETDATE())&#xA;&#xA;UPDATE control.Package SET LastDateRun=GETDATE() WHERE PackageID=@PackageID&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PreCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::CurrentCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::Type1Count"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::Type2Count"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::PostCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Vendor"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D077C41D-54CA-4BF8-BAB1-DA553D0F6F93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Vendor"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Vendor\Current Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Current Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::CurrentCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Current Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Current Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load Vendor\Current Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Vendor\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Derived Column.Outputs[Derived Column Output].Columns[EffectiveEndDate]"
+                      dataType="dbTimeStamp"
+                      description="EffectiveEndDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Vendor\Derived Column.Outputs[Derived Column Output].Columns[EffectiveEndDate]"
+                      name="EffectiveEndDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::CreationDate])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::CreationDate])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Vendor\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Vendor\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Output].Columns[EffectiveSTartDate]"
+                      dataType="dbTimeStamp"
+                      description="EffectiveSTartDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Output].Columns[EffectiveSTartDate]"
+                      name="EffectiveSTartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::CreationDate])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::CreationDate])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Vendor\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Extract from Staging Vendor"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract from Staging Vendor"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT v.VendorID, v.VendorNo, v.VendorName, v.RegistrationNo, v.VendorAddress, v.City, v.State FROM staging.Vendor v</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Vendor\Extract from Staging Vendor.Connections[OleDbConnection]"
+                  connectionManagerID="{9F24E1A4-F608-46D2-9F5F-CD4033C68312}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorID]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]"
+                      name="VendorID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorNo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorNo]"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorNo]"
+                      name="VendorNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorName]"
+                      length="150"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorName]"
+                      name="VendorName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[RegistrationNo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[RegistrationNo]"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[RegistrationNo]"
+                      name="RegistrationNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorAddress]"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorAddress]"
+                      name="VendorAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorID]"
+                      dataType="i4"
+                      name="VendorID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorNo]"
+                      dataType="wstr"
+                      length="50"
+                      name="VendorNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorName]"
+                      dataType="wstr"
+                      length="150"
+                      name="VendorName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[RegistrationNo]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegistrationNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[VendorAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="VendorAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorID]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorID]"
+                      name="VendorID" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorNo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorNo]"
+                      name="VendorNo" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorName]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorName]"
+                      name="VendorName" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[RegistrationNo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[RegistrationNo]"
+                      name="RegistrationNo" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[VendorAddress]"
+                      name="VendorAddress" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[State]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EDW].[DimVendor]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Vendor\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[VendorID]"
+                      cachedDataType="i4"
+                      cachedName="VendorID"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorID]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorID]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[VendorNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorNo"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorNo]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorNo]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[VendorName]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="VendorName"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorName]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorName]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[RegistrationNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegistrationNo"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationNo]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[RegistrationNo]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[VendorAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorAddress"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorAddress]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorAddress]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].Columns[EffectiveSTartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveSTartDate"
+                      externalMetadataColumnId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveSTartDate]"
+                      lineageId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Output].Columns[EffectiveSTartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorSK]"
+                      dataType="i4"
+                      name="VendorSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorID]"
+                      dataType="i4"
+                      name="VendorID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorNo]"
+                      dataType="wstr"
+                      length="50"
+                      name="VendorNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorName]"
+                      dataType="wstr"
+                      length="150"
+                      name="VendorName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationNo]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegistrationNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="VendorAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveSTartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveSTartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveEndDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveEndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [EDW].[DimVendor] SET [EffectiveEndDate] = ? WHERE [VendorID] = ? AND [EffectiveEndDate] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Vendor\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input].Columns[VendorID]"
+                      cachedDataType="i4"
+                      cachedName="VendorID"
+                      externalMetadataColumnId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]" />
+                    <inputColumn
+                      refId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input].Columns[EffectiveEndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveEndDate"
+                      externalMetadataColumnId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Load Vendor\Derived Column.Outputs[Derived Column Output].Columns[EffectiveEndDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [RegistrationNo], [State], [VendorAddress], [VendorID], [VendorName], [VendorNo],[EffectiveSTartDate],[EffectiveEndDate] FROM [EDW].[DimVendor]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[EffectiveSTartDate] IS NOT NULL AND [EffectiveEndDate] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[TescaEDW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[RegistrationNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegistrationNo"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegistrationNo]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[RegistrationNo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[State]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[State]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[VendorAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorAddress"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorAddress]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorAddress]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[VendorID]"
+                      cachedDataType="i4"
+                      cachedName="VendorID"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorID]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[VendorName]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="VendorName"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorName]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[VendorNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorNo"
+                      externalMetadataColumnId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorNo]"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorNo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegistrationNo]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegistrationNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="VendorAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorID]"
+                      dataType="i4"
+                      name="VendorID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorName]"
+                      dataType="wstr"
+                      length="150"
+                      name="VendorName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[VendorNo]"
+                      dataType="wstr"
+                      length="50"
+                      name="VendorNo" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveSTartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveSTartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveEndDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveEndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vendor\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Type 2 Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Type 2 Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Type2Count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Type 2 Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Type 2 Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load Vendor\Type 2 Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vendor\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load Vendor\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[VendorID]"
+                      cachedDataType="i4"
+                      cachedName="VendorID"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[VendorNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorNo"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[VendorName]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="VendorName"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[RegistrationNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegistrationNo"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[RegistrationNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[RegistrationNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[VendorAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorAddress"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorAddress]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorAddress]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 2].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[State]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Vendor\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[VendorID]"
+                      cachedDataType="i4"
+                      cachedName="VendorID"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[VendorNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorNo"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[VendorName]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="VendorName"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[RegistrationNo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="RegistrationNo"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[RegistrationNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[RegistrationNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[VendorAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="VendorAddress"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorAddress]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorAddress]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Vendor\Union All.Inputs[Union All Input 3].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[State]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Vendor\Union All.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vendor\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorID]"
+                      dataType="i4"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorID]"
+                      name="VendorID" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorNo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorNo]"
+                      name="VendorNo" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorName]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorName]"
+                      name="VendorName" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[RegistrationNo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[RegistrationNo]"
+                      name="RegistrationNo" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[VendorAddress]"
+                      name="VendorAddress" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[City]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[State]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Vendor\Union All.Outputs[Union All Output 1].Columns[State]"
+                      name="State" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Vendor.Paths[Derived Column Output]"
+              endId="Package\Load Vendor\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Load Vendor\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Vendor.Paths[Derived Column Output1]"
+              endId="Package\Load Vendor\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Vendor\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Vendor.Paths[Historical Attribute Inserts Output]"
+              endId="Package\Load Vendor\Type 2 Count.Inputs[Row Count Input 1]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Load Vendor\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\Load Vendor.Paths[New Output]"
+              endId="Package\Load Vendor\Current Count.Inputs[Row Count Input 1]"
+              name="New Output"
+              startId="Package\Load Vendor\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Load Vendor.Paths[OLE DB Command Output]"
+              endId="Package\Load Vendor\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Load Vendor\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Load Vendor.Paths[OLE DB Source Output]"
+              endId="Package\Load Vendor\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Vendor\Extract from Staging Vendor.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Vendor.Paths[Row Count Output 1]"
+              endId="Package\Load Vendor\Derived Column.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Load Vendor\Type 2 Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load Vendor.Paths[Row Count Output 11]"
+              endId="Package\Load Vendor\Union All.Inputs[Union All Input 3]"
+              name="Row Count Output 1"
+              startId="Package\Load Vendor\Current Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load Vendor.Paths[Union All Output 1]"
+              endId="Package\Load Vendor\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Load Vendor\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post Count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{18DEE49B-6F3A-4DCC-A525-1D24CBCF64DA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post Count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as PostCount FROM EDW.DimVendor"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PostCount"
+            SQLTask:DtsVariableName="User::PostCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre Count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CEB555BC-42AD-4AED-B6EE-1617BE126335}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre Count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) as PreCount FROM EDW.DimVendor"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PreCount"
+            SQLTask:DtsVariableName="User::PreCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{027DB3EA-D64F-43E8-AFED-B20F46A7FA27}"
+      DTS:From="Package\Pre Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Vendor" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7185DFAD-BBEC-4DEA-B00E-1DF4B9C51D6B}"
+      DTS:From="Package\Load Vendor"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Post Count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8BB95F46-A78A-48FC-992F-19A4403548CF}"
+      DTS:From="Package\Post Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Metrics" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Pre Count"
+          TopLeft="346.538474249417,74.0606087359735" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Vendor"
+          TopLeft="349.230782040478,149.696975104627" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="408.938474249417,115.660608735974">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.09230779106093,34.0363663686538"
+              Start="0,0"
+              End="9.09230779106093,26.5363663686538">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0181831843269" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0181831843269"
+                    Point2="0,17.0181831843269"
+                    Point3="4,17.0181831843269" />
+                  <mssgle:LineSegment
+                    End="5.09230779106093,17.0181831843269" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.09230779106093,17.0181831843269"
+                    Point2="9.09230779106093,17.0181831843269"
+                    Point3="9.09230779106093,21.0181831843269" />
+                  <mssgle:LineSegment
+                    End="9.09230779106093,26.5363663686538" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Post Count"
+          TopLeft="353.846166825154,222.969705024261" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="418.338474432816,191.296975104627">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6727299196333"
+              Start="0,0"
+              End="0,24.1727299196333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1727299196333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Metrics"
+          TopLeft="348.076935844309,291.121222637683" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="417.761551334732,264.569705024261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.5515176134225"
+              Start="0,0"
+              End="0,19.0515176134225">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0515176134225" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Vendor">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\Load Vendor\Extract from Staging Vendor"
+          TopLeft="280.669236482813,9.04545467353053" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Load Vendor\Slowly Changing Dimension"
+          TopLeft="282.669236482812,110.64545467353" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[OLE DB Source Output]"
+          TopLeft="386.669236482812,50.6454546735305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Load Vendor\Derived Column"
+          TopLeft="71.8692328148342,246.518183184327" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load Vendor\OLE DB Command"
+          TopLeft="68.1923099918481,348.906062000667" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[Derived Column Output]"
+          TopLeft="149.630771403341,288.118183184327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.7878788163401"
+              Start="0,0"
+              End="0,53.2878788163401">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.2878788163401" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Load Vendor\Union All"
+          TopLeft="326.669236482812,415.44545467353" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[OLE DB Command Output]"
+          TopLeft="150.592309991848,390.506062000667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="217.410259824298,24.9393926728634"
+              Start="0,0"
+              End="217.410259824298,17.4393926728634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7667456615639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7667456615639"
+                    Point2="0,14.7667456615639"
+                    Point3="4,14.7667456615639" />
+                  <mssgle:LineSegment
+                    End="213.410259824298,14.7667456615639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="213.410259824298,14.7667456615639"
+                    Point2="217.410259824298,14.7667456615639"
+                    Point3="217.410259824298,18.7667456615639" />
+                  <mssgle:LineSegment
+                    End="217.410259824298,17.4393926728634" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Vendor\Derived Column 1"
+          TopLeft="305.469236482813,517.04545467353" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[Union All Output 1]"
+          TopLeft="386.669236482812,457.04545467353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Vendor\Insert Destination"
+          TopLeft="305.469236482813,618.64545467353" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[Derived Column Output1]"
+          TopLeft="386.669236482812,558.64545467353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Load Vendor\Type 2 Count"
+          TopLeft="190.769237766605,185.593945982743" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[Historical Attribute Inserts Output]"
+          TopLeft="353.335903149479,152.24545467353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.7666653828744,33.3484913092128"
+              Start="0,0"
+              End="-91.7666653828744,25.8484913092128">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.49213770525403" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.49213770525403"
+                    Point2="0,13.492137705254"
+                    Point3="-4,13.492137705254" />
+                  <mssgle:LineSegment
+                    End="-87.7666653828744,13.492137705254" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87.7666653828744,13.492137705254"
+                    Point2="-91.7666653828744,13.492137705254"
+                    Point3="-91.7666653828744,17.492137705254" />
+                  <mssgle:LineSegment
+                    End="-91.7666653828744,25.8484913092128" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-120.939719410187,18.492137705254,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[Row Count Output 1]"
+          TopLeft="190.769237766605,206.393945982743">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42.1000049517705,40.1242372015832"
+              Start="0,0"
+              End="-42.1000049517705,32.6242372015832">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-38.1000049517705,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38.1000049517705,0"
+                    Point2="-42.1000049517705,0"
+                    Point3="-42.1000049517705,4" />
+                  <mssgle:LineSegment
+                    End="-42.1000049517705,32.6242372015832" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Load Vendor\Current Count"
+          TopLeft="444.230785525057,259.654554718717" />
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[New Output]"
+          TopLeft="420.002569816146,152.24545467353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.6282157089116,107.409100045186"
+              Start="0,0"
+              End="96.6282157089116,99.9091000451863">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.4555900946174" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.4555900946174"
+                    Point2="0,43.4555900946174"
+                    Point3="4,43.4555900946174" />
+                  <mssgle:LineSegment
+                    End="92.6282157089116,43.4555900946174" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.6282157089116,43.4555900946174"
+                    Point2="96.6282157089116,43.4555900946174"
+                    Point3="96.6282157089116,47.4555900946174" />
+                  <mssgle:LineSegment
+                    End="96.6282157089116,99.9091000451863" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="21.2227211357058,48.4555900946174,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Vendor.Paths[Row Count Output 11]"
+          TopLeft="516.630785525057,301.254554718717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.294882375578,114.190899954813"
+              Start="0,0"
+              End="-111.294882375578,106.690899954813">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.6130328679816" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.6130328679816"
+                    Point2="0,67.6130328679816"
+                    Point3="-4,67.6130328679816" />
+                  <mssgle:LineSegment
+                    End="-107.294882375578,67.6130328679816" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107.294882375578,67.6130328679816"
+                    Point2="-111.294882375578,67.6130328679816"
+                    Point3="-111.294882375578,71.6130328679816" />
+                  <mssgle:LineSegment
+                    End="-111.294882375578,106.690899954813" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Vendor\Extract from Staging Vendor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Vendor\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{F3C645DE-6893-447D-A8D1-465CA5CB16D2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[EDW].[DimVendor]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[RegistrationNo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;RegistrationNo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[State]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorAddress]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;VendorAddress&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;VendorID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;VendorName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Staging Vendor.Outputs[OLE DB Source Output].Columns[VendorNo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;VendorNo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;EffectiveSTartDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;EffectiveEndDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::CreationDate&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
