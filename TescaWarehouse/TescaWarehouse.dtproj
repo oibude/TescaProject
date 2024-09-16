@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9G6U1K7</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfi4C2ltEd0a2n8u3+toZxgAAAAACAAAAAAAQZgAAAAEAACAAAABV0m/eEmw4oaDIHQPEBCK43h/dXPKTeLnitzFdxrvKZgAAAAAOgAAAAAIAACAAAACS/X9IUtYw1zdFH4ev8fg4qCMN1PEyCIIVQwQbs8PPbJAAAACqHm0fbrOMs1fwwYh7UHm2WXlS15h1RVh2l5InxhPucqfL0bzRgJfLXFNgxr64PYQqJrL0LfO2vREODqb+IunFlAuW8RyNqwAHSlgNOOj0w9Zz/nU/AfRkDYqMhopdx1sxZRkTlzScCyYAy/ZIkUy0s9/mFdOi1rssRmnANjRtJr5Dgl9p0bqVspUM00/W/pVAAAAA/wgMsvXisK4WOs94VCW1yMC4MEIVviK1VIAvCTwjbG6YYv0dLAdPizijYnCsaBcueQ4XZJkFkb3yphxvY5SfaA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfi4C2ltEd0a2n8u3+toZxgAAAAACAAAAAAAQZgAAAAEAACAAAACwuDTPGfdHyIb5CiX0NUy+fq8Ti3/GQkoD9nhxS4f2zgAAAAAOgAAAAAIAACAAAAAXuFj7XRJfFvViRHyVqhPGfQYg1kNaSQn9k3B814TKiJAAAADmj7ACzq9b/u1T4TVPoWbuK0L1z0FEAiUKhdPhZBNbpVuFbAEQxddiFMMMV6zh0XFD7yLBvt5LUgHtcPi+79tWem04NyvXBZfRvFrS7LKEK6Ic8/84Ry1uxoq/Ib2giQ1l0XdAYnn/OyJYWelaQKphDhIVAdH2UXhAO5ltv9ik7mOSl4ZKGfwjdYfO1cai3odAAAAAnbxnaq/7I/bmfsVNxZC7o8S2/+iZch9mK8BycLdxojroEX8v9OB5MBocgWjc1haVcSCU4PNm9w/dMDw57AQhpw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -41,6 +41,8 @@
           <SSIS:Package SSIS:Name="dimDescision.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="dimAbsence.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FactSalesAnalysis.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactPurchaseAnalysis.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactOvertimeAnalysis.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="TescaControl.conmgr" />
@@ -581,10 +583,44 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9B856C92-894A-452F-B4F4-107610CFB853}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ACD683A8-7CE2-4073-8F99-9AD28D87397C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactPurchaseAnalysis.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{51AF43EF-F1D8-45D3-BAA2-23A8B38205EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A052391A-5EEA-4AD1-BF8E-F70F2F91E617}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactOvertimeAnalysis.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{5E2E07A5-58D1-49B3-BA65-EFB629933846}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3516C871-C13D-4A99-B5ED-B338C01FC2A7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

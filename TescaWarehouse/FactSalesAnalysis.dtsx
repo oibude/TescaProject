@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{9B856C92-894A-452F-B4F4-107610CFB853}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{ACD683A8-7CE2-4073-8F99-9AD28D87397C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -54,6 +54,48 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Metrics"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1B4A703D-D492-4E2A-A7D0-FA1977993FF7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Metrics"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F9EE1470-EF77-404E-B3C2-2CCE34EB3878}"
+          SQLTask:SqlStatementSource="DECLARE @PackageID INT =? &#xA;DECLARE @PreCount INT=?&#xA;DECLARE @CurrentCount INT=?&#xA;DECLARE @PostCount INT=?&#xA;&#xA;INSERT INTO control.metrics(PackageID, PreCount, CurrentCount, PostCount, RunDate)&#xA;VALUES (@PackageID, @PreCount, @CurrentCount,@PostCount, GETDATE())&#xA;&#xA;UPDATE control.Package SET LastDateRun=GETDATE() WHERE PackageID=@PackageID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PreCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::CurrentCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::PostCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load Sales Analysis"
       DTS:CreationName="Microsoft.Pipeline"
@@ -230,14 +272,14 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor"
+              refId="Package\Load Sales Analysis\Balanced Data Distributor"
               componentClassID="Microsoft.BDD"
               contactInfo="Balanced Data Distributor;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Evaluates and directs rows in a dataset to multiple destinations."
-              name="Balanced Data DistributorBalanced Data Distributor">
+              name="Balanced Data Distributor">
               <inputs>
                 <input
-                  refId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Inputs[Balanced Data Distributor Input]"
+                  refId="Package\Load Sales Analysis\Balanced Data Distributor.Inputs[Balanced Data Distributor Input]"
                   description="Input to the Balanced Data&#x9; Distributor Transformation"
                   name="Balanced Data Distributor Input">
                   <externalMetadataColumns />
@@ -245,36 +287,36 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 1]"
+                  refId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 1]"
                   deleteOutputOnPathDetached="true"
                   exclusionGroup="1"
                   name="Balanced Data Distributor Output 1"
-                  synchronousInputId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Inputs[Balanced Data Distributor Input]">
+                  synchronousInputId="Package\Load Sales Analysis\Balanced Data Distributor.Inputs[Balanced Data Distributor Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 2]"
+                  refId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 2]"
                   deleteOutputOnPathDetached="true"
                   exclusionGroup="1"
                   name="Balanced Data Distributor Output 2"
-                  synchronousInputId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Inputs[Balanced Data Distributor Input]">
+                  synchronousInputId="Package\Load Sales Analysis\Balanced Data Distributor.Inputs[Balanced Data Distributor Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 3]"
+                  refId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 3]"
                   deleteOutputOnPathDetached="true"
                   exclusionGroup="1"
                   name="Balanced Data Distributor Output 3"
-                  synchronousInputId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Inputs[Balanced Data Distributor Input]">
+                  synchronousInputId="Package\Load Sales Analysis\Balanced Data Distributor.Inputs[Balanced Data Distributor Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 4]"
+                  refId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 4]"
                   dangling="true"
                   deleteOutputOnPathDetached="true"
                   exclusionGroup="1"
                   name="Balanced Data Distributor Output 4"
-                  synchronousInputId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Inputs[Balanced Data Distributor Input]">
+                  synchronousInputId="Package\Load Sales Analysis\Balanced Data Distributor.Inputs[Balanced Data Distributor Input]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -8703,17 +8745,17 @@ where [refTable].[TimeHour] = ?</property>
               refId="Package\Load Sales Analysis.Paths[Balanced Data Distributor Output 1]"
               endId="Package\Load Sales Analysis\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Balanced Data Distributor Output 1"
-              startId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 1]" />
+              startId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 1]" />
             <path
               refId="Package\Load Sales Analysis.Paths[Balanced Data Distributor Output 2]"
               endId="Package\Load Sales Analysis\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
               name="Balanced Data Distributor Output 2"
-              startId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 2]" />
+              startId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 2]" />
             <path
               refId="Package\Load Sales Analysis.Paths[Balanced Data Distributor Output 3]"
               endId="Package\Load Sales Analysis\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
               name="Balanced Data Distributor Output 3"
-              startId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Outputs[Balanced Data Distributor Output 3]" />
+              startId="Package\Load Sales Analysis\Balanced Data Distributor.Outputs[Balanced Data Distributor Output 3]" />
             <path
               refId="Package\Load Sales Analysis.Paths[Derived Column Output6]"
               endId="Package\Load Sales Analysis\Union All.Inputs[Union All Input 7]"
@@ -8886,7 +8928,7 @@ where [refTable].[TimeHour] = ?</property>
               startId="Package\Load Sales Analysis\Extract staging SalesAnalysis.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Load Sales Analysis.Paths[Row Count Output 1]"
-              endId="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor.Inputs[Balanced Data Distributor Input]"
+              endId="Package\Load Sales Analysis\Balanced Data Distributor.Inputs[Balanced Data Distributor Input]"
               name="Row Count Output 1"
               startId="Package\Load Sales Analysis\Current Count.Outputs[Row Count Output 1]" />
             <path
@@ -8896,6 +8938,28 @@ where [refTable].[TimeHour] = ?</property>
               startId="Package\Load Sales Analysis\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post Count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{17C7BADA-84D3-4BEB-AE1D-5C7987952B43}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post Count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F3C645DE-6893-447D-A8D1-465CA5CB16D2}"
+          SQLTask:SqlStatementSource="SELECT COUNT (*) as PostCount FROM EDW.Fact_SalesAnalysis"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PostCount"
+            SQLTask:DtsVariableName="User::PostCount" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -8930,6 +8994,22 @@ where [refTable].[TimeHour] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Load Sales Analysis" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3A28FA37-D0BC-4C05-AF8D-4711F092DD62}"
+      DTS:From="Package\Load Sales Analysis"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Post Count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6DB52FC5-7EC8-4EBF-85EA-6D476810778D}"
+      DTS:From="Package\Post Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Metrics" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -8942,7 +9022,7 @@ where [refTable].[TimeHour] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\PreCount FactSalesAnalysis"
@@ -8965,6 +9045,58 @@ where [refTable].[TimeHour] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,24.9606087359736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Post Count"
+          TopLeft="402.692322462974,178.060612492873" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="470.56924528596,142.448488491538">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6121240013341"
+              Start="0,0"
+              End="0,28.1121240013341">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1121240013341" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Load Metrics"
+          TopLeft="401.538476266805,256.454554718717" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="468.91539936489,219.660612492873">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.7939422258443"
+              Start="0,0"
+              End="0,29.2939422258443">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2939422258443" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10092,35 +10224,35 @@ where [refTable].[TimeHour] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="319.2,41.6"
-          Id="Package\Load Sales Analysis\Balanced Data DistributorBalanced Data Distributor"
-          TopLeft="372.395617656757,924.207815871377" />
+          Size="199.2,41.6"
+          Id="Package\Load Sales Analysis\Balanced Data Distributor"
+          TopLeft="370.19781537834,924.770586454477" />
         <EdgeLayout
           Id="Package\Load Sales Analysis.Paths[Row Count Output 1]"
           TopLeft="314.448357472779,889.847643422737">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.947260183978,55.1601724486396"
+              EndConnector="55.7494579055611,55.7229430317396"
               Start="0,0"
-              End="50.447260183978,55.1601724486396">
+              End="48.2494579055611,55.7229430317396">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="24.973630091989,0" />
+                    End="23.8747289527805,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.973630091989,0"
-                    Point2="28.973630091989,0"
-                    Point3="28.973630091989,4" />
+                    Point1="23.8747289527805,0"
+                    Point2="27.8747289527805,0"
+                    Point3="27.8747289527805,4" />
                   <mssgle:LineSegment
-                    End="28.973630091989,51.1601724486396" />
+                    End="27.8747289527805,51.7229430317396" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.973630091989,51.1601724486396"
-                    Point2="28.973630091989,55.1601724486396"
-                    Point3="32.973630091989,55.1601724486396" />
+                    Point1="27.8747289527805,51.7229430317396"
+                    Point2="27.8747289527805,55.7229430317396"
+                    Point3="31.8747289527805,55.7229430317396" />
                   <mssgle:LineSegment
-                    End="50.447260183978,55.1601724486396" />
+                    End="48.2494579055611,55.7229430317396" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10135,37 +10267,37 @@ where [refTable].[TimeHour] = ?</property>
           TopLeft="149.868136967025,1020.74461383124" />
         <EdgeLayout
           Id="Package\Load Sales Analysis.Paths[Balanced Data Distributor Output 1]"
-          TopLeft="531.995617656757,965.807815871377">
+          TopLeft="421.99781537834,966.370586454477">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-296.927480689732,54.9367979598641"
+              EndConnector="-186.929678411315,54.374027376764"
               Start="0,0"
-              End="-296.927480689732,47.4367979598641">
+              End="-186.929678411315,46.874027376764">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.468398979932" />
+                    End="0,14.6035311632522" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.468398979932"
-                    Point2="0,27.468398979932"
-                    Point3="-4,27.468398979932" />
+                    Point1="0,14.6035311632522"
+                    Point2="0,18.6035311632522"
+                    Point3="-4,18.6035311632522" />
                   <mssgle:LineSegment
-                    End="-292.927480689732,27.468398979932" />
+                    End="-182.929678411315,18.6035311632522" />
                   <mssgle:CubicBezierSegment
-                    Point1="-292.927480689732,27.468398979932"
-                    Point2="-296.927480689732,27.468398979932"
-                    Point3="-296.927480689732,31.468398979932" />
+                    Point1="-182.929678411315,18.6035311632522"
+                    Point2="-186.929678411315,18.6035311632522"
+                    Point3="-186.929678411315,22.6035311632522" />
                   <mssgle:LineSegment
-                    End="-296.927480689732,47.4367979598641" />
+                    End="-186.929678411315,46.874027376764" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-226.164306751116,32.468398979932,155.4011328125,11.609375"
+              BoundingBox="-171.165405611907,23.6035311632522,155.4011328125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10179,73 +10311,73 @@ where [refTable].[TimeHour] = ?</property>
           TopLeft="779.615413211508,1008.98529892967" />
         <EdgeLayout
           Id="Package\Load Sales Analysis.Paths[Balanced Data Distributor Output 2]"
-          TopLeft="583.862284323423,965.807815871377">
+          TopLeft="469.79781537834,966.370586454477">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.1677618594798,59.1965349262188"
+              EndConnector="88.8967070856038,58.6337643431187"
               Start="0,0"
-              End="-25.1677618594798,51.6965349262188">
+              End="88.8967070856038,51.1337643431187">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.8557607084213" />
+                    End="0,25.3168821715594" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.8557607084213"
-                    Point2="0,23.8557607084213"
-                    Point3="-4,23.8557607084213" />
+                    Point1="0,25.3168821715594"
+                    Point2="0,29.3168821715594"
+                    Point3="4,29.3168821715594" />
                   <mssgle:LineSegment
-                    End="-21.1677618594798,23.8557607084213" />
+                    End="84.8967070856038,29.3168821715594" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21.1677618594798,23.8557607084213"
-                    Point2="-25.1677618594798,23.8557607084213"
-                    Point3="-25.1677618594798,27.8557607084213" />
+                    Point1="84.8967070856038,29.3168821715594"
+                    Point2="88.8967070856038,29.3168821715594"
+                    Point3="88.8967070856038,33.3168821715594" />
                   <mssgle:LineSegment
-                    End="-25.1677618594798,51.6965349262188" />
+                    End="88.8967070856038,51.1337643431187" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-90.4699942109899,28.8557607084213,155.7722265625,11.609375"
+              BoundingBox="-33.4377597384481,34.3168821715594,155.7722265625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Sales Analysis.Paths[Balanced Data Distributor Output 3]"
-          TopLeft="609.795617656757,965.807815871377">
+          TopLeft="517.59781537834,966.370586454477">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="255.019795554751,43.1774830582971"
+              EndConnector="347.217597833168,42.6147124751971"
               Start="0,0"
-              End="255.019795554751,35.6774830582971">
+              End="347.217597833168,35.1147124751971">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.6309781034329" />
+                    End="0,10.580198852148" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.6309781034329"
-                    Point2="0,14.6309781034329"
-                    Point3="4,14.6309781034329" />
+                    Point1="0,10.580198852148"
+                    Point2="0,14.580198852148"
+                    Point3="4,14.580198852148" />
                   <mssgle:LineSegment
-                    End="251.019795554751,14.6309781034329" />
+                    End="343.217597833168,14.580198852148" />
                   <mssgle:CubicBezierSegment
-                    Point1="251.019795554751,14.6309781034329"
-                    Point2="255.019795554751,14.6309781034329"
-                    Point3="255.019795554751,18.6309781034329" />
+                    Point1="343.217597833168,14.580198852148"
+                    Point2="347.217597833168,14.580198852148"
+                    Point3="347.217597833168,18.580198852148" />
                   <mssgle:LineSegment
-                    End="255.019795554751,35.6774830582971" />
+                    End="347.217597833168,35.1147124751971" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="49.6872610586255,19.6309781034329,155.6452734375,11.609375"
+              BoundingBox="95.786162197834,19.580198852148,155.6452734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
