@@ -1,0 +1,1539 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6048cbab-0d50-4622-9e01-6d28748b49af" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tesca Overtime Analysis</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Overtime Analysis</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e624de4e-eb4a-436c-8238-da8b327760c9">
+          <ID>Overtime Analysis 20191231</ID>
+          <Name>Overtime Analysis 20191231</Name>
+          <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="ddacd71a-5e90-43c8-8342-0ac89025be02">
+            <DataSourceID>Tesca EDW</DataSourceID>
+            <QueryDefinition>SELECT OvertimeSK, OvertimeID, EmployeeSK, StartDateSK, StartHourSK, EndDateSK, EndHourSK, OvertimeHour, LoadDate
+FROM  EDW.Fact_OvertimeAnalysis
+WHERE StartDateSk &lt;= 20191231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>204315</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+        <Partition dwd:design-time-name="c4b713fe-ae3b-45fe-9792-0f1fd8132b7f">
+          <ID>Overtime Analysis Beyond 20191231</ID>
+          <Name>Overtime Analysis Beyond 20191231</Name>
+          <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="bc71912b-fb6c-4bae-978e-be07c2aced89">
+            <DataSourceID>Tesca EDW</DataSourceID>
+            <QueryDefinition>SELECT OvertimeSK, OvertimeID, EmployeeSK, StartDateSK, StartHourSK, EndDateSK, EndHourSK, OvertimeHour, LoadDate
+FROM  EDW.Fact_OvertimeAnalysis
+WHERE StartDateSK &gt; 20191231 AND StartDateSK &lt;= 20221231</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>144583</EstimatedRows>
+          <AggregationDesignID>Aggregation Design Beyond 20191231</AggregationDesignID>
+        </Partition>
+        <Partition dwd:design-time-name="ea38c188-5713-4c41-948a-4b72688eb195">
+          <ID>Overtime Analysis Beyond 20230101</ID>
+          <Name>Overtime Analysis Beyond 20230101</Name>
+          <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="df8264ff-a200-4863-97d5-66adee88a8d2">
+            <DataSourceID>Tesca EDW</DataSourceID>
+            <QueryDefinition>SELECT OvertimeSK, OvertimeID, EmployeeSK, StartDateSK, StartHourSK, EndDateSK, EndHourSK, OvertimeHour, LoadDate
+FROM  EDW.Fact_OvertimeAnalysis
+WHERE StartDateSK &gt;=20230101</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>43747</EstimatedRows>
+          <AggregationDesignID>Aggregation Design Beyond 20230101</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>Aggregation Design 20191231</Name>
+          <CreatedTimestamp>2024-09-18T20:22:38.133333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-09-18T20:22:38.133333Z</LastSchemaUpdate>
+          <EstimatedRows>204315</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Interval</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodof Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date SK</AttributeID>
+                  <EstimatedCount>359764</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Year</AttributeID>
+                  <EstimatedCount>985</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Dayof Week</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Employee</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Employee SK</AttributeID>
+                  <EstimatedCount>839</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employee No</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employee Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Marital Status</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Effective Start Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Effective End Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date Of Birth</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Age</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Of Birth</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime End Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date SK</AttributeID>
+                  <EstimatedCount>359764</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Year</AttributeID>
+                  <EstimatedCount>985</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Dayof Week</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Interval</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodof Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime ID</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Overtime ID</AttributeID>
+                  <EstimatedCount>392645</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+        <AggregationDesign>
+          <ID>Aggregation Design Beyond 20191231</ID>
+          <Name>Aggregation Design Beyond 20191231</Name>
+          <CreatedTimestamp>2024-09-18T20:28:39.153333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-09-18T20:28:39.153333Z</LastSchemaUpdate>
+          <EstimatedRows>144583</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Interval</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodof Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date SK</AttributeID>
+                  <EstimatedCount>359764</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Year</AttributeID>
+                  <EstimatedCount>985</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Dayof Week</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Employee</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Employee SK</AttributeID>
+                  <EstimatedCount>839</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employee No</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employee Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Marital Status</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Effective Start Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Effective End Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date Of Birth</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Age</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Of Birth</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime End Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date SK</AttributeID>
+                  <EstimatedCount>359764</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Year</AttributeID>
+                  <EstimatedCount>985</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Dayof Week</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Interval</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodof Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime ID</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Overtime ID</AttributeID>
+                  <EstimatedCount>392645</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+        <AggregationDesign>
+          <ID>Aggregation Design Beyond 20230101</ID>
+          <Name>Aggregation Design Beyond 20230101</Name>
+          <CreatedTimestamp>2024-09-18T20:32:56.006667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-09-18T20:32:56.006667Z</LastSchemaUpdate>
+          <EstimatedRows>43747</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Interval</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodof Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date SK</AttributeID>
+                  <EstimatedCount>359764</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Year</AttributeID>
+                  <EstimatedCount>985</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Dayof Week</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Employee</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Employee SK</AttributeID>
+                  <EstimatedCount>839</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employee No</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employee Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Marital Status</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Effective Start Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Effective End Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date Of Birth</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Age</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Of Birth</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime End Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date SK</AttributeID>
+                  <EstimatedCount>359764</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Year</AttributeID>
+                  <EstimatedCount>985</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Dayof Week</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Time SK</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Time Interval</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Hour</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Periodof Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Overtime ID</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Overtime ID</AttributeID>
+                  <EstimatedCount>392645</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Employee SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Time SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Overtime ID</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

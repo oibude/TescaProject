@@ -1,0 +1,568 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="32a62477-94ed-4d68-a35d-99ad4f142046" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tesca Overtime Analysis</ID>
+  <Name>Tesca Overtime Analysis</Name>
+  <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="28" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4590" scrolltop="-3865" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="87" x="19188" y="17050" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001683c0100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime Analysis" left="5420" top="4116" logicalid="14" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3799" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000d70e0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="EDW_Fact_OvertimeAnalysis" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Employee" left="7980" top="14431" logicalid="15" controlid="2" masterid="0" hint1="0" hint2="0" width="3281" height="4138" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000d10c00002a100000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="EDW_DimEmployee" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime Start Date" left="10820" top="1" logicalid="16" controlid="3" masterid="0" hint1="0" hint2="0" width="3493" height="4815" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a50d0000cf120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="EDW_DimDate" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime End Date" left="10820" top="7216" logicalid="17" controlid="4" masterid="0" hint1="0" hint2="0" width="3493" height="4815" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a50d0000cf120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Overtime End Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime ID" left="5420" top="626" logicalid="18" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="1090" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000042040000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Overtime ID" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime Start Hour" left="20" top="4624" logicalid="19" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="2783" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000df0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="EDW_DimTime" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime End Hour" left="2580" top="14431" logicalid="20" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="2783" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000df0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Overtime End Hour" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2720" top="5616" logicalid="21" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[edw_overtime_starthour_sk]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="15" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3020" y="6015" />
+              <point x="5420" y="6015" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8120" top="2009" logicalid="22" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="3206" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[edw_overtime_startdate_sk]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="18" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10820" y="2408" />
+              <point x="9620" y="2408" />
+              <point x="9620" y="4915" />
+              <point x="8420" y="4915" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7170" top="7615" logicalid="23" controlid="10" masterid="0" hint1="0" hint2="0" width="2850" height="7316" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[edw_overtime_employee_sk]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9620" y="14431" />
+              <point x="9620" y="11173" />
+              <point x="7470" y="11173" />
+              <point x="7470" y="7915" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8120" top="6265" logicalid="24" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="3758" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Fact_OvertimeAnalysis-Overtime End Date]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="18" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10820" y="9623" />
+              <point x="9620" y="9623" />
+              <point x="9620" y="6565" />
+              <point x="8420" y="6565" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3681" top="7615" logicalid="25" controlid="12" masterid="0" hint1="0" hint2="0" width="2439" height="7316" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Fact_OvertimeAnalysis-Overtime End Hour]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="1" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4080" y="14431" />
+              <point x="4080" y="11173" />
+              <point x="5820" y="11173" />
+              <point x="5820" y="7915" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="6521" top="1217" logicalid="26" controlid="13" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Fact_OvertimeAnalysis-Overtime ID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6920" y="1716" />
+              <point x="6920" y="4116" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4590</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3865</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>87</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="be6683ee-f7d9-4d60-87a9-17c8cf9d1467">
+      <ID>Employee</ID>
+      <Name>Employee</Name>
+      <DimensionID>Employee</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4a7b5bdc-3165-4f09-ac21-214e5837dba7">
+          <AttributeID>Employee SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eb1a1f74-66a7-4c8d-a529-108f72a78b23">
+          <AttributeID>Employee No</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0253f988-7099-4b83-9ed4-f9fde47cf509">
+          <AttributeID>Employee Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d9d315f4-eb26-46f3-9ad0-cfb09f686cf5">
+          <AttributeID>Marital Status</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3defe8af-8ee9-441b-8d21-c2ff249d752e">
+          <AttributeID>Effective Start Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4407780e-92df-4a9a-b5fc-46a29c7fa272">
+          <AttributeID>Effective End Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4bdf8ef3-0d69-4088-9b26-b0218487cab5">
+          <AttributeID>Date Of Birth</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a1fb8aee-64ad-4a32-a754-a27668ff28ed">
+          <AttributeID>Age</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fa6e7a97-ff0e-4219-bf02-00caa968bdd0">
+          <AttributeID>Year Of Birth</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="50ed77fc-ed1f-434b-845f-f820c5a3ee65">
+      <ID>Overtime ID</ID>
+      <Name>Overtime ID</Name>
+      <DimensionID>Overtime ID</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="49e2b583-721e-439b-9e53-f7980ca87f0e">
+          <AttributeID>Overtime ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="95658eef-f0d9-4cc4-a095-566669470918">
+      <ID>Overtime Start Hour</ID>
+      <Name>Overtime Start Hour</Name>
+      <DimensionID>Overtime Start Hour</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8f2d6fe8-abda-42f0-98a4-8b609e9045bf">
+          <AttributeID>Time SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="feced7c0-113c-4ec5-b9e2-8810ea1fd53f">
+          <AttributeID>Time Hour</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d8e86321-edb3-4c78-a97d-7082258a3b04">
+          <AttributeID>Time Interval</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4a03670f-8d74-43ad-a84c-0d0251e3e061">
+          <AttributeID>Business Hour</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f9433e24-9231-4fd7-935c-9d63a24b50e3">
+          <AttributeID>Periodof Day</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="16c0825f-ca3b-46db-9a2e-685759baa829">
+      <ID>Overtime Start Date</ID>
+      <Name>Overtime Start Date</Name>
+      <DimensionID>Overtime Start Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="344743b3-396a-4758-b21c-a6eb02a834d9">
+          <AttributeID>Date SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="29ccdbe4-fbf8-4d88-95d1-fb8cf7d1f756">
+          <AttributeID>Business Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ca0906bb-caa7-40f4-a2c1-7a025ddabbcb">
+          <AttributeID>Business Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5440bac3-65c3-43ed-987a-101fbdd58584">
+          <AttributeID>Business Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="24d545b7-37f5-47fd-9402-a3bb75baae80">
+          <AttributeID>Business Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a01ddeab-396f-4d2e-81f5-11804bc3623b">
+          <AttributeID>English Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b73ed91a-741a-414d-8300-e1e87be70f3c">
+          <AttributeID>English Dayof Week</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="78120200-328f-4c74-a33c-45bc09cf3a0d">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="74a8a5a0-ddb1-4073-996d-e61dc94bb67e">
+      <ID>Overtime End Date</ID>
+      <Name>Overtime End Date</Name>
+      <DimensionID>Overtime End Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="33e94039-3f82-4142-bd17-1ca33901b7cb">
+          <AttributeID>Date SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6538c932-daa1-46b9-8df4-4248a6090de1">
+          <AttributeID>Business Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c7c91cc2-dffb-4436-aaf1-8c7809636053">
+          <AttributeID>Business Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ef8a4c19-a83f-4d0d-85cd-9547d8f9b8df">
+          <AttributeID>Business Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a402554c-f012-4a58-b9cc-28df2d351e89">
+          <AttributeID>Business Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d5ccf4e1-0279-49b6-a3d9-e3131066d33d">
+          <AttributeID>English Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="31547a07-63e2-4c00-93fd-bf4e50805874">
+          <AttributeID>English Dayof Week</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="375f7070-f1e7-4180-9d79-32dc808c7f3a">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="99b1f6a3-3015-44d3-9396-02a76ad4177b">
+      <ID>Overtime End Hour</ID>
+      <Name>Overtime End Hour</Name>
+      <DimensionID>Overtime End Hour</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="89db15b6-1baf-42f1-bfe3-35969e042f6d">
+          <AttributeID>Time SK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6e1690b2-a4c1-41d6-a929-8f7cea5d3b48">
+          <AttributeID>Time Hour</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0161c3f0-7b4f-4a3c-aae3-b3fa802f4df1">
+          <AttributeID>Time Interval</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="506f04c7-8ae3-4948-9bbf-81a389dcf33b">
+          <AttributeID>Business Hour</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="106adaa9-c4d7-4762-a2d7-f52fba800448">
+          <AttributeID>Periodof Day</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="d758f61b-9696-4088-ae64-962eec5b5284">
+      <ID>Overtime Analysis</ID>
+      <Name>Overtime Analysis</Name>
+      <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="df1893cf-c4d5-4fa8-9387-7bde908a1ec7">
+          <ID>Overtime Hour</ID>
+          <Name>Overtime Hour</Name>
+          <Source dwd:design-time-name="41e43741-0044-4f0b-93e8-1412f5d8b5ff">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4be8e889-bfe1-4b0f-9bd2-baaddade4a0a">
+              <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+              <ColumnID>OvertimeHour</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5e0e8fdb-a43f-4df6-802e-b0784ad6849a">
+          <ID>Overtime Analysis Count</ID>
+          <Name>Overtime Analysis Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="9e56f745-d0eb-416c-adcf-ac983cb4481b">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="ab6c1015-db46-436f-a028-934fcc8a6022">
+              <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>392645</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="389472ab-a153-440c-a680-3d80c526b225">
+          <CubeDimensionID>Overtime Start Hour</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9808d43d-9e07-403f-81bf-6cba25dea933">
+              <AttributeID>Time SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b0d95524-afa9-4eda-9137-7d15eb653ffe">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3f4bc6d2-1cd9-473a-a2da-3150145d937a">
+                    <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+                    <ColumnID>StartHourSK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="386b09a0-6341-4d27-af79-08750fe64025">
+          <CubeDimensionID>Overtime Start Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d5dd961a-c3d2-49e3-abec-6a5d94592598">
+              <AttributeID>Date SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0784147e-c48e-42bb-82b7-b533a1ed35a8">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="156bcdb7-ef51-47c1-9b6a-dd9da075dfc4">
+                    <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+                    <ColumnID>StartDateSK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f202f155-40e7-42d4-89a5-3c87d52a33fa">
+          <CubeDimensionID>Employee</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b8f2e8aa-bce7-4ac2-b983-d9ea72d5ea5b">
+              <AttributeID>Employee SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c5227fca-0e68-4a58-8673-467a2c6c615e">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e4118ef1-05b7-4145-88f8-d26ea7e3635d">
+                    <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+                    <ColumnID>EmployeeSK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="105dcfb3-5d6f-4345-a87f-2515e082d73c">
+          <CubeDimensionID>Overtime End Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="32cb21a7-2c19-4ec7-a7d4-88332c62b997">
+              <AttributeID>Date SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c830a7b4-3ca0-4267-bead-d60b9b05debe">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f8fc68e6-fd3d-4798-8e51-adc24e48f328">
+                    <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+                    <ColumnID>EndDateSK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e0a42e0d-56bf-416c-b4cf-6612952b0438">
+          <CubeDimensionID>Overtime End Hour</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3f8ad5b7-1195-4df8-8c6a-370a7ba3dee3">
+              <AttributeID>Time SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0d7f674b-131b-4d18-84f5-81f7bd172fa7">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="456c1113-3f43-4c10-bb6a-a64e92ac2b93">
+                    <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+                    <ColumnID>EndHourSK</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="41ea1419-8725-40fd-a5c0-b8f870a5d30b">
+          <CubeDimensionID>Overtime ID</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="80febd8d-d4aa-4fac-9f00-7b17cfd4f6a4">
+              <AttributeID>Overtime ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="707710cd-4999-46ca-8014-24c3b62da4bc">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="18c5f03e-5fd2-4a0f-a2cf-454a89e6c97c">
+                    <TableID>EDW_Fact_OvertimeAnalysis</TableID>
+                    <ColumnID>OvertimeID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="b1aaad96-2936-492f-9aca-ecf2a33ac77b">
+    <DataSourceViewID>Tesca Overtime Analysis</DataSourceViewID>
+  </Source>
+</Cube>

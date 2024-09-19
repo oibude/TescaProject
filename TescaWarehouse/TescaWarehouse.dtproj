@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9G6U1K7</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfi4C2ltEd0a2n8u3+toZxgAAAAACAAAAAAAQZgAAAAEAACAAAACwuDTPGfdHyIb5CiX0NUy+fq8Ti3/GQkoD9nhxS4f2zgAAAAAOgAAAAAIAACAAAAAXuFj7XRJfFvViRHyVqhPGfQYg1kNaSQn9k3B814TKiJAAAADmj7ACzq9b/u1T4TVPoWbuK0L1z0FEAiUKhdPhZBNbpVuFbAEQxddiFMMMV6zh0XFD7yLBvt5LUgHtcPi+79tWem04NyvXBZfRvFrS7LKEK6Ic8/84Ry1uxoq/Ib2giQ1l0XdAYnn/OyJYWelaQKphDhIVAdH2UXhAO5ltv9ik7mOSl4ZKGfwjdYfO1cai3odAAAAAnbxnaq/7I/bmfsVNxZC7o8S2/+iZch9mK8BycLdxojroEX8v9OB5MBocgWjc1haVcSCU4PNm9w/dMDw57AQhpw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfi4C2ltEd0a2n8u3+toZxgAAAAACAAAAAAAQZgAAAAEAACAAAACM2WkZ0xj5vCTcaBUMBjnt16neItaVx/w0iCgW3jrM1QAAAAAOgAAAAAIAACAAAAA8iNst0DFx6gjQ5f/YwJWZf7SM4Mj1mWiIt3jfvX6SnpAAAAD1pemSHhVjise9eQUL/leA10mLh3uKFsT/ULZxMF4ajjAHo6TeDycIFiRaDtseW5z3xK5ydNEX1GTUEr0ZCFXIUd8Z+/ULLRfLwslHV8prRlj9lVSbuw3dXKzn9g7EOGZWjcUeeg9UdRSOsZ7vYa6eYsniLc7ELsXusVbJRT2tlaPL4kTNDsY8Z/SCVpc2ofRAAAAAvVt+kxHR8CDDY8GpX5ArclxyzoPRWLrcDM7ccqC7pQTXluxSzHXUM1f+lcIRIQwBJoFlDLXXpu+2Dli7T9oHng==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -43,6 +43,9 @@
           <SSIS:Package SSIS:Name="FactSalesAnalysis.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FactPurchaseAnalysis.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FactOvertimeAnalysis.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactMisconductAnalysis.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FactAbsenceAnalysis.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Control.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="TescaControl.conmgr" />
@@ -617,10 +620,61 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3516C871-C13D-4A99-B5ED-B338C01FC2A7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{244E4FD6-7095-486B-A3B8-439E7CAE1A30}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactMisconductAnalysis.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{31F0D46B-CE51-4C4D-A038-55C418EFC2A0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F0F4CFD6-5A22-40A6-A57A-0470B1EF8E40}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FactAbsenceAnalysis.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{3EA1B098-AD8A-4288-AD6F-89DC4C8B7C68}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D54BA8B4-D04E-4BA4-8DB8-33076018925A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Control.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{2B912F82-B308-458B-A8DE-359C151D4BFB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7539F0CC-E5D2-4CFE-9455-13F2673A80C3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

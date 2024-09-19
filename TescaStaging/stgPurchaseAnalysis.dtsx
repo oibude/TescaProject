@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{F25C4E0E-6497-489B-A565-913EB583BC5B}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{73F47B6C-136B-4563-BD7B-91BFD6BC2749}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -713,7 +713,7 @@ ELSE
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{4F71BFE0-C5E2-46EB-A2F3-3A76A34D1D64}"
-          SQLTask:SqlStatementSource="IF (SELECT COUNT(*) FROM TescaEDW.EDW.Fact_PurchaseAnalysis) &lt;=0&#xA;&#x9;SELECT COUNT(*) as SourceCount FROM PurchaseTransaction p &#xA;&#x9;WHERE CONVERT(DATE, p.TransDate) &lt;= DATEADD(DAY, -1, CONVERT(DATE, GETDATE()))  --beginning to N-1&#xA;ELSE&#xA;SELECT p.TransactionID, p.TransactionNO, CONVERT(DATE, p.TransDate) as TransDate, Convert(DATE, OrderDate) OrderDate, CONVERT(DATE, DeliveryDate) DeliveryDate,&#xA;&#x9;DATEDIFF(DAY,OrderDate, p.DeliveryDate) +1 as DifferentialDate, p.VendorID, p.EmployeeID, p.ProductID, p.StoreID, p.Quantity, p.TaxAmount, p.LineAmount&#xA;&#x9;FROM PurchaseTransaction p WHERE CONVERT(DATE, p.TransDate) = DATEADD(DAY, -1, CONVERT(DATE, GETDATE())) "
+          SQLTask:SqlStatementSource="IF (SELECT COUNT(*) FROM TescaEDW.EDW.Fact_PurchaseAnalysis) &lt;=0&#xA;&#x9;SELECT COUNT(*) as SourceCount FROM PurchaseTransaction p &#xA;&#x9;WHERE CONVERT(DATE, p.TransDate) &lt;= DATEADD(DAY, -1, CONVERT(DATE, GETDATE())) &#xA;ELSE&#xA;&#x9;SELECT COUNT(*) as SourceCount FROM PurchaseTransaction p &#xA;&#x9;WHERE CONVERT(DATE, p.TransDate) = DATEADD(DAY, -1, CONVERT(DATE, GETDATE())) "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="SourceCount"
@@ -814,13 +814,21 @@ ELSE
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="186.8,42.8"
-          Id="Package\Truncate Staging fact PurchaseAnalysis"
-          TopLeft="368.846167375351,22.060606857524" />
+          Size="243.2,41.6"
+          Id="Package\Load staging fact PurchaseAnalysis"
+          TopLeft="383.846167925547,196.575764676866" />
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Source Count"
           TopLeft="381.153860134486,111.09091310396" />
+        <NodeLayout
+          Size="186.8,42.8"
+          Id="Package\Truncate Staging fact PurchaseAnalysis"
+          TopLeft="368.846167375351,22.060606857524" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Update Metrics"
+          TopLeft="415.769246019556,278.121222168071" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="462.246167375351,64.860606857524">
@@ -855,10 +863,6 @@ ELSE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="243.2,41.6"
-          Id="Package\Load staging fact PurchaseAnalysis"
-          TopLeft="383.846167925547,196.575764676866" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="451.953860134486,152.69091310396">
@@ -893,10 +897,6 @@ ELSE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Update Metrics"
-          TopLeft="415.769246019556,278.121222168071" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="505.446167925547,238.175764676866">
@@ -938,7 +938,7 @@ ELSE
     design-time-name="Package\Load staging fact PurchaseAnalysis">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="198.4,41.6"
           Id="Package\Load staging fact PurchaseAnalysis\Extract Purchase Analysis"
@@ -947,28 +947,6 @@ ELSE
           Size="124,41.6"
           Id="Package\Load staging fact PurchaseAnalysis\DesCount"
           TopLeft="486.5,113" />
-        <EdgeLayout
-          Id="Package\Load staging fact PurchaseAnalysis.Paths[OLE DB Source Output]"
-          TopLeft="546.6,70.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.4"
-              Start="0,0"
-              End="0,34.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="188,41.6"
           Id="Package\Load staging fact PurchaseAnalysis\Load Purchase Analysis"
@@ -1004,7 +982,33 @@ ELSE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load staging fact PurchaseAnalysis.Paths[OLE DB Source Output]"
+          TopLeft="546.6,70.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4"
+              Start="0,0"
+              End="0,34.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

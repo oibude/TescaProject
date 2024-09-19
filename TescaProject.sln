@@ -7,15 +7,30 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "TescaStaging", "TescaStagin
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "TescaWarehouse", "TescaWarehouse\TescaWarehouse.dtproj", "{E634FA42-B16D-4EB6-A748-D81654D07396}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "TescaMultiSalesAnalysis", "TescaMultiSalesAnalysis\TescaMultiSalesAnalysis.dwproj", "{0B22378C-D014-4970-8C00-B57609A751F6}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "TescaMultiOvertimeAnalysis", "TescaMultiOvertimeAnalysis\TescaMultiOvertimeAnalysis.dwproj", "{4FF1FD63-421B-4C85-B780-FFE5CF3047DB}"
+EndProject
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "TescaTabSalesAnalysis", "TescaTabSalesAnalysis\TescaTabSalesAnalysis.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Development|Default = Development|Default
+		Development|x86 = Development|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{53F30A25-99B3-4BB2-B609-55F3B145CB15}.Development|Default.ActiveCfg = Development
-		{53F30A25-99B3-4BB2-B609-55F3B145CB15}.Development|Default.Build.0 = Development
-		{E634FA42-B16D-4EB6-A748-D81654D07396}.Development|Default.ActiveCfg = Development
-		{E634FA42-B16D-4EB6-A748-D81654D07396}.Development|Default.Build.0 = Development
+		{53F30A25-99B3-4BB2-B609-55F3B145CB15}.Development|x86.ActiveCfg = Development
+		{53F30A25-99B3-4BB2-B609-55F3B145CB15}.Development|x86.Build.0 = Development
+		{E634FA42-B16D-4EB6-A748-D81654D07396}.Development|x86.ActiveCfg = Development
+		{E634FA42-B16D-4EB6-A748-D81654D07396}.Development|x86.Build.0 = Development
+		{0B22378C-D014-4970-8C00-B57609A751F6}.Development|x86.ActiveCfg = Development
+		{0B22378C-D014-4970-8C00-B57609A751F6}.Development|x86.Build.0 = Development
+		{0B22378C-D014-4970-8C00-B57609A751F6}.Development|x86.Deploy.0 = Development
+		{4FF1FD63-421B-4C85-B780-FFE5CF3047DB}.Development|x86.ActiveCfg = Development
+		{4FF1FD63-421B-4C85-B780-FFE5CF3047DB}.Development|x86.Build.0 = Development
+		{4FF1FD63-421B-4C85-B780-FFE5CF3047DB}.Development|x86.Deploy.0 = Development
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Deploy.0 = Development|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

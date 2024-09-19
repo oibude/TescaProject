@@ -1,0 +1,537 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="456f000c-7e75-4061-9973-5b08c4e26316" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tesca Overtime Analysis</ID>
+  <Name>Tesca Overtime Analysis</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="17" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8812" scrolltop="-5939" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="19738" y="18172" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="010000009001683c0100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime Analysis" left="266" top="7215" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3799" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000d70e0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="EDW_Fact_OvertimeAnalysis" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime Start Date" left="-79" top="353" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3493" height="4815" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000a50d0000cf120000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="EDW_DimDate" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime Start Hour" left="7233" top="11294" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="2783" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000df0a0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="EDW_DimTime" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Employee" left="126" top="13414" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3281" height="3461" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000d10c0000850d0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="EDW_DimEmployee" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="2966" top="10464" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="4567" height="1521" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[edw_overtime_starthour_sk]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="10" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="7233" y="11585" />
+                    <point x="5250" y="11585" />
+                    <point x="5250" y="10764" />
+                    <point x="3266" y="10764" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="168" top="4669" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="2846" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[edw_overtime_startdate_sk]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="1" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="567" y="5168" />
+                    <point x="567" y="6191" />
+                    <point x="666" y="6191" />
+                    <point x="666" y="7215" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="1367" top="10714" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[edw_overtime_employee_sk]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="1766" y="13414" />
+                    <point x="1766" y="11014" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime End Date" left="-5424" top="7243" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3372" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e00002c0d000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Overtime End Date" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-2352" top="7144" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="2918" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Fact_OvertimeAnalysis-Overtime End Date]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="10" destid="1" sourceattachpoint="11" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-2052" y="7543" />
+                    <point x="-893" y="7543" />
+                    <point x="-893" y="7464" />
+                    <point x="266" y="7464" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime End Hour" left="6291" top="4636" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="2921" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000690b0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Overtime End Hour" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="2966" top="6797" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3625" height="967" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Fact_OvertimeAnalysis-Overtime End Hour]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="12" destid="1" sourceattachpoint="18" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="6291" y="7196" />
+                    <point x="4779" y="7196" />
+                    <point x="4779" y="7464" />
+                    <point x="3266" y="7464" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Overtime ID" left="6657" top="8561" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="3000" height="1157" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000085040000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Overtime ID" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="2966" top="8740" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="3991" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Fact_OvertimeAnalysis-Overtime ID]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="14" destid="1" sourceattachpoint="10" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="6657" y="9139" />
+                    <point x="4962" y="9139" />
+                    <point x="4962" y="9114" />
+                    <point x="3266" y="9114" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-8812</DiagramViewPortLeft>
+            <DiagramViewPortTop>-5939</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>75</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Tesca EDW</DataSourceID>
+  <Schema>
+    <xs:schema id="Tesca_x0020_Overtime_x0020_Analysis" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Tesca_x0020_Overtime_x0020_Analysis" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="89ebb4cf-11bc-4f50-94a1-4b190f118b30">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="EDW_Fact_OvertimeAnalysis" msprop:design-time-name="2c2988a4-c436-4fe8-8175-6c1e5898023b" msprop:IsLogical="True" msprop:FriendlyName="Overtime Analysis" msprop:DbTableName="Overtime Analysis" msprop:TableType="View" msprop:QueryDefinition="SELECT OvertimeSK, OvertimeID, EmployeeSK, StartDateSK, StartHourSK, EndDateSK, EndHourSK, OvertimeHour, LoadDate&#xD;&#xA;FROM  EDW.Fact_OvertimeAnalysis" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="OvertimeSK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="d7de3916-5bdd-4225-9a03-ac49f9a3d48a" msprop:DbColumnName="OvertimeSK" msprop:FriendlyName="OvertimeSK" type="xs:long" minOccurs="0" />
+                  <xs:element name="OvertimeID" msprop:design-time-name="a0de2748-1ecc-4708-a033-14c846f55f7e" msprop:DbColumnName="OvertimeID" msprop:FriendlyName="OvertimeID" type="xs:int" minOccurs="0" />
+                  <xs:element name="EmployeeSK" msprop:design-time-name="b20b28a6-c391-47a8-ac2c-07b94d07e3e9" msprop:DbColumnName="EmployeeSK" msprop:FriendlyName="EmployeeSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="StartDateSK" msprop:design-time-name="2ee66ef2-ec20-44f5-bf64-4ddabbe06354" msprop:DbColumnName="StartDateSK" msprop:FriendlyName="StartDateSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="StartHourSK" msprop:design-time-name="fb73d7cd-d9b7-4ac8-afd8-a7252054ed4e" msprop:DbColumnName="StartHourSK" msprop:FriendlyName="StartHourSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="EndDateSK" msprop:design-time-name="37950862-3561-4b43-80a4-7ad826a5145b" msprop:DbColumnName="EndDateSK" msprop:FriendlyName="EndDateSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="EndHourSK" msprop:design-time-name="30b49c56-94f8-4eda-9493-99c7b7a71011" msprop:DbColumnName="EndHourSK" msprop:FriendlyName="EndHourSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="OvertimeHour" msprop:design-time-name="76da95f9-44ab-4da2-93bf-58199b833a5e" msprop:DbColumnName="OvertimeHour" msprop:FriendlyName="OvertimeHour" type="xs:double" minOccurs="0" />
+                  <xs:element name="LoadDate" msprop:design-time-name="e801fa6b-4feb-49d4-aa58-bac9cf42d187" msprop:DbColumnName="LoadDate" msprop:FriendlyName="LoadDate" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="EDW_DimDate" msprop:design-time-name="b62f07bd-55dc-4639-b7f8-7a97fa8e5561" msprop:IsLogical="True" msprop:FriendlyName="Overtime Start Date" msprop:DbTableName="Overtime Start Date" msprop:TableType="View" msprop:QueryDefinition="SELECT dateSK, BusinessDate, BusinessYear, BusinessMonth, BusinessQuarter, EnglishMonth, SpanishMonth, FrenchMonth, EnglishDayofWeek, SpanishDayofWeek, FrenchDayofWeek, LoadDate&#xD;&#xA;FROM  EDW.DimDate" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="dateSK" msprop:design-time-name="98e8457d-81a1-4e24-ab8f-060e03399f8e" msprop:DbColumnName="dateSK" msprop:FriendlyName="dateSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="BusinessDate" msprop:design-time-name="d0b4518b-0ecb-4ca8-ad08-96d0a05ce5f6" msprop:DbColumnName="BusinessDate" msprop:FriendlyName="BusinessDate" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="BusinessYear" msprop:design-time-name="8f08cd46-4263-4a2a-a3a0-0abe7ca63602" msprop:DbColumnName="BusinessYear" msprop:FriendlyName="BusinessYear" type="xs:int" minOccurs="0" />
+                  <xs:element name="BusinessMonth" msprop:design-time-name="68c75cc8-44c9-408a-9572-7c616cb25899" msprop:DbColumnName="BusinessMonth" msprop:FriendlyName="BusinessMonth" type="xs:int" minOccurs="0" />
+                  <xs:element name="BusinessQuarter" msprop:design-time-name="e32f5bd4-f00f-4ded-aad2-86bfd1668acb" msprop:DbColumnName="BusinessQuarter" msprop:FriendlyName="BusinessQuarter" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EnglishMonth" msprop:design-time-name="0aec6bb7-7cea-43d1-b297-76d07a0e664b" msprop:DbColumnName="EnglishMonth" msprop:FriendlyName="EnglishMonth" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SpanishMonth" msprop:design-time-name="049e58b9-42f7-4130-bde4-07280ab17c13" msprop:DbColumnName="SpanishMonth" msprop:FriendlyName="SpanishMonth" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FrenchMonth" msprop:design-time-name="2977850f-51ff-473d-ba7d-186f11003be9" msprop:DbColumnName="FrenchMonth" msprop:FriendlyName="FrenchMonth" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EnglishDayofWeek" msprop:design-time-name="0400b7d3-cdad-4cf2-97c5-8a6a6816f429" msprop:DbColumnName="EnglishDayofWeek" msprop:FriendlyName="EnglishDayofWeek" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SpanishDayofWeek" msprop:design-time-name="6234f816-bffa-41a2-a165-c4c360f6cde5" msprop:DbColumnName="SpanishDayofWeek" msprop:FriendlyName="SpanishDayofWeek" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FrenchDayofWeek" msprop:design-time-name="4865c71e-b2ec-4e6d-bb57-5ec41ef93e65" msprop:DbColumnName="FrenchDayofWeek" msprop:FriendlyName="FrenchDayofWeek" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LoadDate" msprop:design-time-name="311a8523-484d-4b9b-9ec9-1721cb06241b" msprop:DbColumnName="LoadDate" msprop:FriendlyName="LoadDate" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="EDW_DimTime" msprop:design-time-name="bed48005-b350-4464-a84e-4ebc9f37e5c9" msprop:IsLogical="True" msprop:FriendlyName="Overtime Start Hour" msprop:DbTableName="Overtime Start Hour" msprop:TableType="View" msprop:QueryDefinition="SELECT TimeSK, TimeHour, TimeInterval, BusinessHour, PeriodofDay, LoadDate&#xD;&#xA;FROM  EDW.DimTime" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TimeSK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="5ad2bec2-7a52-44e0-8a57-4d56b8f8d2f8" msprop:DbColumnName="TimeSK" msprop:FriendlyName="TimeSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="TimeHour" msprop:design-time-name="3f0a1cae-c286-4eb7-9e3d-996b325bcbb2" msprop:DbColumnName="TimeHour" msprop:FriendlyName="TimeHour" type="xs:int" minOccurs="0" />
+                  <xs:element name="TimeInterval" msprop:design-time-name="8cac8ce3-bdc7-45f9-86f1-2e351e9d3688" msprop:DbColumnName="TimeInterval" msprop:FriendlyName="TimeInterval" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BusinessHour" msprop:design-time-name="78f5900d-2aab-4ea5-8870-d8b800037530" msprop:DbColumnName="BusinessHour" msprop:FriendlyName="BusinessHour" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PeriodofDay" msprop:design-time-name="e017e10f-2edf-4ae1-8e22-87485ea8a355" msprop:DbColumnName="PeriodofDay" msprop:FriendlyName="PeriodofDay" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LoadDate" msprop:design-time-name="7ca9825e-d5dd-411b-a737-85bcdb9e86cb" msprop:DbColumnName="LoadDate" msprop:FriendlyName="LoadDate" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="EDW_DimEmployee" msprop:design-time-name="50c3ea86-a5cb-4c0c-826d-66b4a398f9db" msprop:IsLogical="True" msprop:FriendlyName="Employee" msprop:DbTableName="Employee" msprop:TableType="View" msprop:QueryDefinition="SELECT EmployeeSK, EmployeeID, EmployeeNo, EmployeeName, DoB AS [Date of Birth], DATEDIFF([YEAR], DoB, GETDATE()) AS Age, YEAR(DoB) AS [Year of Birth], MaritalStatus, EffectiveStartDate, EffectiveEndDate&#xD;&#xA;FROM  EDW.DimEmployee" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="EmployeeSK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="4dd70d14-a5f3-49fe-af27-77d37428b9d0" msprop:DbColumnName="EmployeeSK" msprop:FriendlyName="EmployeeSK" type="xs:int" minOccurs="0" />
+                  <xs:element name="EmployeeID" msprop:design-time-name="4acb7205-8f2c-40d2-ac09-69c8cd8b465a" msprop:DbColumnName="EmployeeID" msprop:FriendlyName="EmployeeID" type="xs:int" minOccurs="0" />
+                  <xs:element name="EmployeeNo" msprop:design-time-name="b39e0d23-19ac-4a3f-8203-2fe4f2c1a1ed" msprop:DbColumnName="EmployeeNo" msprop:FriendlyName="EmployeeNo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EmployeeName" msprop:design-time-name="0f4bb63d-c030-474d-bdb6-db945052a68a" msprop:DbColumnName="EmployeeName" msprop:FriendlyName="EmployeeName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="150" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MaritalStatus" msprop:design-time-name="1d53c9ab-fd9f-40ea-ac79-1d232aa09506" msprop:DbColumnName="MaritalStatus" msprop:FriendlyName="MaritalStatus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EffectiveStartDate" msprop:design-time-name="376a4f3c-c475-4af5-97ea-f3655fb487e1" msprop:DbColumnName="EffectiveStartDate" msprop:FriendlyName="EffectiveStartDate" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="EffectiveEndDate" msprop:design-time-name="c4a33be3-6700-48e3-91aa-feea2086cfe1" msprop:DbColumnName="EffectiveEndDate" msprop:FriendlyName="EffectiveEndDate" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Date_x0020_of_x0020_Birth" msprop:DbColumnName="Date of Birth" msprop:design-time-name="efad0cbe-a93c-4f12-aaca-08b86e77f537" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Age" msprop:DbColumnName="Age" msprop:design-time-name="4e7582be-3310-4532-a06d-1634fe9a3571" type="xs:int" minOccurs="0" />
+                  <xs:element name="Year_x0020_of_x0020_Birth" msprop:DbColumnName="Year of Birth" msprop:design-time-name="2fec430e-ab1a-46c1-9b79-4b9d5b3a6674" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Overtime_x0020_End_x0020_Date" msprop:design-time-name="a3090025-27da-4b8d-9fd9-636d9174032c" msprop:IsLogical="True" msprop:FriendlyName="Overtime End Date" msprop:DbTableName="Overtime End Date" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT dateSK, BusinessDate, BusinessYear, BusinessMonth, BusinessQuarter, EnglishMonth, SpanishMonth, FrenchMonth, EnglishDayofWeek, SpanishDayofWeek, FrenchDayofWeek, LoadDate&#xD;&#xA;FROM  EDW.DimDate" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="dateSK" msprop:design-time-name="96726f87-e1c4-419b-b1a5-5ade8895bce2" msprop:DbColumnName="dateSK" msprop:FriendlyName="dateSK" type="xs:int" />
+                  <xs:element name="BusinessDate" msprop:design-time-name="3530a20e-e062-4e19-9f95-b64e4ab1671a" msprop:DbColumnName="BusinessDate" msprop:FriendlyName="BusinessDate" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="BusinessYear" msprop:design-time-name="de9fa68f-2f8c-4e88-938f-b37d7b90d4d7" msprop:DbColumnName="BusinessYear" msprop:FriendlyName="BusinessYear" type="xs:int" minOccurs="0" />
+                  <xs:element name="BusinessMonth" msprop:design-time-name="573d3397-c093-4767-a232-376acd8a75c7" msprop:DbColumnName="BusinessMonth" msprop:FriendlyName="BusinessMonth" type="xs:int" minOccurs="0" />
+                  <xs:element name="BusinessQuarter" msprop:design-time-name="a74e68b4-ade5-4599-a0b9-49d73e4b1a75" msprop:DbColumnName="BusinessQuarter" msprop:FriendlyName="BusinessQuarter" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EnglishMonth" msprop:design-time-name="88bbaab9-fa20-4e12-905f-a12b1922734c" msprop:DbColumnName="EnglishMonth" msprop:FriendlyName="EnglishMonth" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SpanishMonth" msprop:design-time-name="7180bcc1-a6f4-4775-93c4-9537ed950f8b" msprop:DbColumnName="SpanishMonth" msprop:FriendlyName="SpanishMonth" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FrenchMonth" msprop:design-time-name="bc12ed7f-94a0-4784-8ce1-31211b56a74b" msprop:DbColumnName="FrenchMonth" msprop:FriendlyName="FrenchMonth" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EnglishDayofWeek" msprop:design-time-name="1d0c1a1e-ebad-4aa0-bc93-e68eb0fb377e" msprop:DbColumnName="EnglishDayofWeek" msprop:FriendlyName="EnglishDayofWeek" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SpanishDayofWeek" msprop:design-time-name="833c5527-8cde-4303-bae8-efd7abf63930" msprop:DbColumnName="SpanishDayofWeek" msprop:FriendlyName="SpanishDayofWeek" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FrenchDayofWeek" msprop:design-time-name="52d4747a-4775-4877-ba7c-859db29a7b2e" msprop:DbColumnName="FrenchDayofWeek" msprop:FriendlyName="FrenchDayofWeek" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LoadDate" msprop:design-time-name="4360b6ae-b24b-42c5-8ffa-b591dbcb5626" msprop:DbColumnName="LoadDate" msprop:FriendlyName="LoadDate" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Overtime_x0020_End_x0020_Hour" msprop:design-time-name="89fcf4e6-e1bb-4bbd-ac72-ad81d1a7af4e" msprop:IsLogical="True" msprop:FriendlyName="Overtime End Hour" msprop:DbTableName="Overtime End Hour" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT TimeSK, TimeHour, TimeInterval, BusinessHour, PeriodofDay, LoadDate&#xD;&#xA;FROM  EDW.DimTime" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TimeSK" msdata:ReadOnly="true" msprop:design-time-name="6577469d-792a-413a-afdf-45e881481821" msprop:DbColumnName="TimeSK" msprop:FriendlyName="TimeSK" type="xs:int" />
+                  <xs:element name="TimeHour" msprop:design-time-name="035a36c5-d9ae-4737-a731-24d4dbfb4188" msprop:DbColumnName="TimeHour" msprop:FriendlyName="TimeHour" type="xs:int" minOccurs="0" />
+                  <xs:element name="TimeInterval" msprop:design-time-name="9e37b557-cad4-484d-8c44-4c2bac89a641" msprop:DbColumnName="TimeInterval" msprop:FriendlyName="TimeInterval" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BusinessHour" msprop:design-time-name="bf5216c2-9bc7-4d90-8ec1-7a2a001794a0" msprop:DbColumnName="BusinessHour" msprop:FriendlyName="BusinessHour" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PeriodofDay" msprop:design-time-name="8d158d45-56f9-4206-a4bf-89fc2ba515e1" msprop:DbColumnName="PeriodofDay" msprop:FriendlyName="PeriodofDay" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LoadDate" msprop:design-time-name="622e71b1-53a5-415c-a434-a5b25f7fe4a1" msprop:DbColumnName="LoadDate" msprop:FriendlyName="LoadDate" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Overtime_x0020_ID" msprop:design-time-name="a566d67c-04b6-4c91-9642-88a86c9f697c" msprop:IsLogical="True" msprop:FriendlyName="Overtime ID" msprop:DbTableName="Overtime ID" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT OvertimeID&#xD;&#xA;FROM  EDW.Fact_OvertimeAnalysis&#xD;&#xA;GROUP BY OvertimeID" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="OvertimeID" msprop:design-time-name="5ed3c995-fa71-4b8d-97ea-95f6fbff544d" msprop:DbColumnName="OvertimeID" msprop:FriendlyName="OvertimeID" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//EDW_Fact_OvertimeAnalysis" />
+          <xs:field xpath="OvertimeSK" />
+        </xs:unique>
+        <xs:unique name="EDW_DimDate_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//EDW_DimDate" />
+          <xs:field xpath="dateSK" />
+        </xs:unique>
+        <xs:unique name="EDW_DimTime_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//EDW_DimTime" />
+          <xs:field xpath="TimeSK" />
+        </xs:unique>
+        <xs:unique name="EDW_DimEmployee_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//EDW_DimEmployee" />
+          <xs:field xpath="EmployeeSK" />
+        </xs:unique>
+        <xs:unique name="Overtime_x0020_End_x0020_Date_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Overtime_x0020_End_x0020_Date" />
+          <xs:field xpath="dateSK" />
+        </xs:unique>
+        <xs:unique name="Overtime_x0020_End_x0020_Hour_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Overtime_x0020_End_x0020_Hour" />
+          <xs:field xpath="TimeSK" />
+        </xs:unique>
+        <xs:unique name="Overtime_x0020_ID_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Overtime_x0020_ID" />
+          <xs:field xpath="OvertimeID" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="edw_overtime_starthour_sk" msdata:parent="EDW_DimTime" msdata:child="EDW_Fact_OvertimeAnalysis" msdata:parentkey="TimeSK" msdata:childkey="StartHourSK" msprop:IsLogical="True" />
+          <msdata:Relationship name="edw_overtime_startdate_sk" msdata:parent="EDW_DimDate" msdata:child="EDW_Fact_OvertimeAnalysis" msdata:parentkey="dateSK" msdata:childkey="StartDateSK" msprop:IsLogical="True" />
+          <msdata:Relationship name="edw_overtime_employee_sk" msdata:parent="EDW_DimEmployee" msdata:child="EDW_Fact_OvertimeAnalysis" msdata:parentkey="EmployeeSK" msdata:childkey="EmployeeSK" msprop:IsLogical="True" />
+          <msdata:Relationship name="Fact_OvertimeAnalysis-Overtime_x0020_End_x0020_Date" msdata:parent="Overtime_x0020_End_x0020_Date" msdata:child="EDW_Fact_OvertimeAnalysis" msdata:parentkey="dateSK" msdata:childkey="EndDateSK" msprop:Description="" msprop:IsLogical="True" />
+          <msdata:Relationship name="Fact_OvertimeAnalysis-Overtime_x0020_End_x0020_Hour" msdata:parent="Overtime_x0020_End_x0020_Hour" msdata:child="EDW_Fact_OvertimeAnalysis" msdata:parentkey="TimeSK" msdata:childkey="EndHourSK" msprop:Description="" msprop:IsLogical="True" />
+          <msdata:Relationship name="Fact_OvertimeAnalysis-Overtime_x0020_ID" msdata:parent="Overtime_x0020_ID" msdata:child="EDW_Fact_OvertimeAnalysis" msdata:parentkey="OvertimeID" msdata:childkey="OvertimeID" msprop:Description="" msprop:IsLogical="True" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Tesca_x0020_Overtime_x0020_Analysis xmlns="" />
+  </Schema>
+</DataSourceView>

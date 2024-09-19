@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{02DA161B-D7C0-4590-B370-06FA095AA1B1}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{EE0CB6E0-C073-4538-9CFD-B1EC02996BEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -827,7 +827,7 @@ ELSE
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{4F71BFE0-C5E2-46EB-A2F3-3A76A34D1D64}"
-          SQLTask:SqlStatementSource="IF(SELECT COUNT(*) FROM TescaEDW.EDW.fact_salesanalysis) &lt;=0&#xA;&#x9;SELECT COUNT(*) as SourceCount FROM SalesTransaction s WHERE CONVERT(DATE, TransDate) &lt;= DATEADD(DAY, -1, CONVERT(DATE, GETDATE()))&#xA;ELSE&#xA;&#x9;SELECT COUNT(*) FROM SalesTransaction s WHERE CONVERT(DATE, TransDate) = DATEADD(DAY, -1, CONVERT(DATE, GETDATE())) "
+          SQLTask:SqlStatementSource="IF(SELECT COUNT(*) FROM TescaEDW.EDW.fact_salesanalysis) &lt;=0&#xA;&#x9;SELECT COUNT(*) as SourceCount FROM SalesTransaction s WHERE CONVERT(DATE, TransDate) &lt;= DATEADD(DAY, -1, CONVERT(DATE, GETDATE())) &#xA;ELSE&#xA;&#x9;SELECT COUNT(*) as SourceCount FROM SalesTransaction s WHERE CONVERT(DATE, TransDate) = DATEADD(DAY, -1, CONVERT(DATE, GETDATE())) "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="SourceCount"
@@ -1016,7 +1016,7 @@ ELSE
     design-time-name="Package\Load fact SalesAnalysis">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="215.2,41.6"
           Id="Package\Load fact SalesAnalysis\Extract stg fact SalesAnalysis"
@@ -1048,7 +1048,9 @@ ELSE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1070,7 +1072,9 @@ ELSE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -1,0 +1,327 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="91845c22-9e7f-4a4c-9eab-248a77d87c5b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Delivery Date</ID>
+  <Name>Delivery Date</Name>
+  <CreatedTimestamp>0001-01-01T07:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T07:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1689" scrolltop="-6059" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7366" y="17050" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001683c0100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Delivery Date" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3493" height="4477" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a50d00007d110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Delivery Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1689</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6059</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T07:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="72be19c4-3e1c-4246-aa72-e64f024d9055">
+    <DataSourceViewID>Tesca EDW</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="27d84328-3f02-40ef-b40d-7f9c87d53caf">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="8ca8cf48-d49d-4092-b768-bfce47e1c6e2">
+      <ID>Date SK</ID>
+      <Name>Date SK</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>359764</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="603c89f8-395e-4a46-8ac1-fbaae5c5b2bc">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec9a0bae-600f-4da4-b237-e4c3f545f821">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>dateSK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="3e27ed53-e6ad-42ca-8f50-6c9aa4326f99">
+          <AttributeID>Business Date</AttributeID>
+          <Name>Delivery Business Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e45841e6-00d3-4a4c-b607-79a823098a58">
+          <AttributeID>Business Year</AttributeID>
+          <Name>Delivery Business Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f86729cd-7edb-44f9-ba72-cfd9c3349fdf">
+          <AttributeID>Business Month</AttributeID>
+          <Name>Delivery Business Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dbc8ef24-d7f1-439e-a656-bdce6b90f5e0">
+          <AttributeID>Business Quarter</AttributeID>
+          <Name>Delivery Business Quarter</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8676d3c7-14d4-41a2-9c7e-f906d69b2446">
+          <AttributeID>English Month</AttributeID>
+          <Name>Delivery English Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b364394f-7fc4-47ab-87d9-41d947241c77">
+          <AttributeID>Spanish Month</AttributeID>
+          <Name>Delivery Spanish Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="25927f3b-e20e-4ab2-8ce8-5d8d62b0ee7f">
+          <AttributeID>French Month</AttributeID>
+          <Name>Delivery French Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c63ac5e9-3f95-45cc-a1dd-6a3361240c38">
+          <AttributeID>English Dayof Week</AttributeID>
+          <Name>Delivery English Day of Week</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f45ef586-d32f-4f99-a36e-cd874bb27101">
+          <AttributeID>Spanish Dayof Week</AttributeID>
+          <Name>Delivery Spanish Day of Week</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="344f74c2-1822-4d87-9e8d-05a2c2a02dd4">
+          <AttributeID>French Dayof Week</AttributeID>
+          <Name>Delivery French Day of Week</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="388a208a-3538-4893-8af2-3ec1e2f6dacd">
+      <ID>Business Date</ID>
+      <Name>Delivery Business Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0e285d96-adab-425e-8e80-c7ba63708326">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7720ff63-dfa7-406d-84de-66c29844bf13">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>BusinessDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fe060d02-6713-42af-9a59-8b7a84f8f739">
+      <ID>Business Year</ID>
+      <Name>Delivery Business Year</Name>
+      <EstimatedCount>985</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c42a7310-2a77-48a1-a959-4e4c288ff860">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6815b11f-ece7-4aaa-ab73-2ef8600a1369">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>BusinessYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a3f06a8b-f473-4c2f-a6cd-ff2045a0060c">
+      <ID>Business Month</ID>
+      <Name>Delivery Business Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0c12160d-2e75-4f9e-8e53-ebf65ae141f1">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cce434f7-6d79-4843-adf3-3c2b21b6be5d">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>BusinessMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fa49e0d3-ffdd-495a-b59a-f89bec0c72ba">
+      <ID>Business Quarter</ID>
+      <Name>Delivery Business Quarter</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e448183a-669e-44bb-b310-9cc14c73e8bf">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c8ce44c-e9b9-4bce-a197-454c5c251e9d">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>BusinessQuarter</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c1ebda4e-dd8c-4d58-9f13-5542596c9a49">
+      <ID>English Month</ID>
+      <Name>Delivery English Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8f83ccc6-88e3-4d8d-a9ae-13bf9348074b">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a55199a-baf6-49d0-8a09-4084972ad6a6">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>EnglishMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9e50dbc2-28db-4551-ad92-e285f85ef742">
+      <ID>Spanish Month</ID>
+      <Name>Delivery Spanish Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5de4ddd4-7ed6-4f9d-a8dc-c8e60529a9c5">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6430e8d-57e4-4e4a-b72b-dfc79bebddca">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>SpanishMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="59fbea4a-c5f3-4cfa-99b7-092a4a9504b8">
+      <ID>French Month</ID>
+      <Name>Delivery French Month</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d8194a44-41b3-45b9-9cc9-a1d84d97b7f4">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8fcf29d-634d-4deb-8105-13441cb94c2b">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>FrenchMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5f5f8a0a-81b4-4077-ad76-4adfcde9ece5">
+      <ID>English Dayof Week</ID>
+      <Name>Delivery English Day of Week</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7882a971-e2cf-4cfe-a132-5a7bb6dd197b">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="18b332cd-0190-46bb-acc7-479502f6398f">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>EnglishDayofWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="503644e7-9423-4b85-b147-b8faff527e06">
+      <ID>Spanish Dayof Week</ID>
+      <Name>Delivery Spanish Day of Week</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="018b6133-66ea-4251-bef3-2f40d95a3f04">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="381c7fb4-04e7-4f1f-9e5c-7bca57f6aa47">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>SpanishDayofWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d8364985-5271-427d-a62b-5b2e4a752871">
+      <ID>French Dayof Week</ID>
+      <Name>Delivery French Day of Week</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cc32caf3-8ebc-449e-a386-d93d05186179">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a2d63b1-4486-4d49-bd8c-9d76a50c488f">
+            <TableID>Delivery_x0020_Date</TableID>
+            <ColumnID>FrenchDayofWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="6399bc03-a3af-43e4-bd94-65bb8a67b861">
+      <ID>Hierarchy</ID>
+      <Name>Delivery Date Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="dd34cca0-e235-4290-9d4e-ea226e05e76f">
+          <ID>Delivery Business Year</ID>
+          <Name>Delivery Business Year</Name>
+          <SourceAttributeID>Business Year</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="a9caae46-3184-434c-a2f8-381ec835a337">
+          <ID>Delivery Business Quarter</ID>
+          <Name>Delivery Business Quarter</Name>
+          <SourceAttributeID>Business Quarter</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="0d320094-be30-4ed0-b2bf-465b37c890e3">
+          <ID>Delivery English Month</ID>
+          <Name>Delivery English Month</Name>
+          <SourceAttributeID>English Month</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
